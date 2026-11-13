@@ -1,24 +1,29 @@
 {
-  "checked_at": "2026-11-13T12:51:35.722277+00:00",
+  "checked_at": "2026-11-13T13:45:12.041878+00:00",
   "document": "main.pdf",
-  "sha256": "240f06430314b5c7064c3daa5a92fc86c4524f9ad46b84f45d59b5ecdd3f709d",
+  "sha256": "f1582502cc99f365b4871c177dbd5c7eb759d0e5a531f2dbfb3a555986cc48a9",
+  "bytes": 539580,
   "pages": 13,
-  "bytes": 541046,
+  "visibility": "public",
   "generator_sha256": "e1adf906a9a210915be069a7d7bc713e48ee86ba0acd2b3e248f59f1e329e214",
   "source_summary_sha256": "0504eefdd1b48e9e2cf06b1e57c53ed2df3395154fac20d5f0763344aab86209",
   "source_predictions_sha256": "e9c5e529035258cd7ba4eed76b934f1d3a891cc43ea3b2f017e504f4768722b5",
-  "visibility": "public",
+  "source_tex_sha256": "06fbf0de0a9a307136a817fadacf311f9aa45ccfd05de68a6bf26ad2786f53ec",
+  "source_archive_sha256": "3c58bf4fa6a9e4441d703faae891a4bcb2571da9d0140fe6641f4301625e3696",
   "checks": {
     "source_input_hashes_match": true,
-    "model_auc_tokens_match_summary": true,
+    "numeric_tokens_checked_against_summary": 82,
+    "numeric_mismatches": [],
     "all_nine_tables_and_seven_figures_present": true,
     "identity_scope_matches_approval": true,
     "no_overfull_boxes_missing_characters_unresolved_references": true,
-    "all_source_archive_entries_verified": true
+    "all_source_archive_entries_verified": true,
+    "homepage_project_repository_URL_annotations_match_profile": true,
+    "Chinese_text_extracts_correctly": true
   },
   "rendering": {
     "tool": "pdftoppm",
-    "dpi": 115,
+    "dpi": 110,
     "public_pages_reviewed": [
       1,
       2,
@@ -34,20 +39,31 @@
       12,
       13
     ],
-    "private_edition_review": "first page inspected; remaining body reviewed in earlier QA, current page 10 has edition-specific source path",
+    "private_edition_review": "Current first page plus link/status changes inspected; body reviewed using public edition and prior full private QA",
     "reviewer": "Codex; not author signoff"
   },
-  "source_archive_sha256": "596157a70c9c3153b9998a609760aa62807f18993921dd64dd3c64998d938bbf",
   "source_archive_standalone_local_compile_passed": true,
-  "online_overleaf_compilation_tested": false,
+  "current_revision_online_overleaf_compilation_verified": false,
+  "earlier_revision_online_PDF_content_checked": true,
+  "earlier_revision_full_online_compile_success_confirmed": false,
+  "homepage_status_in_profile": "ready_for_publication",
+  "homepage_live_access_checked_by_this_QA": false,
   "author_review_completed": false,
   "submission_ready": false,
   "pending": [
-    "personal homepage content and publication",
+    "verify newly published homepage and refreshed downloads against final deployment",
     "author learning review and final submission"
   ],
   "known_limits": [
     "Dense correlation labels require PDF zoom; figures retain vector data.",
+    "Earlier Fandol online PDF has reader-dependent Chinese text extraction; local Arial TrueType PDF works with pypdf and Poppler.",
     "Internal test estimates do not demonstrate external clinical validity."
-  ]
+  ],
+  "privacy_scan": {
+    "student_id_in_public_files": false,
+    "private_email_in_public_files": false,
+    "local_absolute_paths_in_public_files": false,
+    "private_institution_in_public_PDF": false,
+    "source_archive_allowlist_checked": true
+  }
 }

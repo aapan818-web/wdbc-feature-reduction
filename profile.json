@@ -1,13 +1,56 @@
 {
   "username": "aapan818-web",
   "display_name": "潘冠宇",
-  "bio": "",
+  "bio": "我是潘冠宇。这里放着几张生活里的照片，也整理着一份学习记录。",
   "github_url": "https://github.com/aapan818-web",
   "repository_url": "https://github.com/aapan818-web/wdbc-feature-reduction",
-  "homepage_url": "",
+  "homepage_url": "https://aapan818-web.github.io/wdbc-feature-reduction/",
   "project_url": "https://aapan818-web.github.io/wdbc-feature-reduction/project/",
   "report_title": "乳腺肿块良恶性分类中的特征减量",
-  "homepage_status": "deferred_by_user",
+  "homepage_status": "ready_for_publication",
   "public_report_approved": true,
-  "public_report_author": "潘冠宇"
+  "public_report_author": "潘冠宇",
+  "home": {
+    "headline": "把日常留在这里。",
+    "lead": "照片、学习，以及一些还在继续的事。",
+    "about_paragraphs": [
+      "海面、红墙、黄昏，照片留下的总是一些具体的东西。翻到这一页，当时的光还在，许多话便不必急着说完。",
+      "这份 Python 课程项目从公开数据展开，记录分析的步骤、得到的结果，以及仍需谨慎解释的地方。照片留住片刻，代码留下过程。关于我，先从这里开始。"
+    ],
+    "photos": [
+      {
+        "key": "portrait",
+        "src": "assets/photos/portrait.webp",
+        "caption": "镜头前",
+        "alt": "身穿红色篮球背心的单人肖像",
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "key": "sea",
+        "src": "assets/photos/sea.webp",
+        "caption": "海面与风",
+        "alt": "海边，身穿花衬衫的人抬手扶着墨镜",
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "key": "red-wall",
+        "src": "assets/photos/red-wall.webp",
+        "caption": "红墙前",
+        "alt": "红色文字墙前的单人坐姿照片",
+        "width": 1067,
+        "height": 1600
+      },
+      {
+        "key": "dusk",
+        "src": "assets/photos/dusk.webp",
+        "caption": "黄昏这一刻",
+        "alt": "暮色与树影前的单人近照",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "copy_status": "original_local_draft"
+  }
 }

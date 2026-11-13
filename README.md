@@ -2,7 +2,7 @@
 
 在同一数据划分、同一逻辑回归设置下，比较 30、10、5 个细胞核特征的分类表现；以类别比例基线和随机森林作为参照。数据来自课程提供的 WDBC 公开数据，恶性 M=1、良性 B=0。项目不用于临床决策，不将减少模型输入解释为减少检查或费用。
 
-[打开公开项目展示](https://aapan818-web.github.io/wdbc-feature-reduction/project/) · [查看公开报告源文件](public_report/main.tex) · [学习说明](LEARNING_GUIDE.md)
+[个人主页](https://aapan818-web.github.io/wdbc-feature-reduction/) · [公开项目展示](https://aapan818-web.github.io/wdbc-feature-reduction/project/) · [查看公开报告源文件](public_report/main.tex) · [学习说明](LEARNING_GUIDE.md)
 
 ## 当前成果与边界
 
@@ -20,7 +20,7 @@
 
 LR5−LR30 的测试 AUC 差为 −0.000331，成对 bootstrap 95% 区间为 [−0.010251，0.009259]；LR10−LR30 为 0.001323，区间为 [−0.006283，0.010251]。这些区间以当前已训练模型为条件，均跨零，不构成等效或临床非劣效证明。
 
-项目页已发布并验证无登录访问。个人主页按作者要求暂缓，等待照片与介绍；站点根入口仅跳转项目页，不代表个人主页已完成。课程提交版报告含学号，保存在本地；公开报告经作者确认只署名“潘冠宇”，不含学号和学院。
+项目页已发布并验证无登录访问。个人主页使用作者提供的四张单人照片，配有原创介绍和课程项目入口；网页照片为压缩副本，原图保留在课程目录。课程提交版报告含学号，保存在本地；公开报告经作者确认只署名“潘冠宇”，不含学号和学院。
 
 ## 项目入口
 
@@ -58,7 +58,7 @@ python scripts/build_report.py
 python scripts/build_report.py --public
 ```
 
-本地报告生成器读取实际 `outputs/summary.json`、测试预测 CSV 和 `profile.private.json`；公版只读取公开配置，不读取私有署名文件。缺少署名或公开链接会明确列为待补，不会编造。随后使用 XeLaTeX/BibTeX 流程，或 Tectonic 分别编译 `report/main.tex` 与 `public_report/main.tex`。在 Overleaf 导入完整报告源文件后选择 XeLaTeX；已验证本地编译，未声称完成 Overleaf 在线编译。
+本地报告生成器读取实际 `outputs/summary.json`、测试预测 CSV 和 `profile.private.json`；公版只读取公开配置，不读取私有署名文件。缺少署名或公开链接会明确列为待补，不会编造。随后使用 XeLaTeX/BibTeX 流程，或 Tectonic 分别编译 `report/main.tex` 与 `public_report/main.tex`。两版本地编译均已核验；课程提交版也已在 Overleaf 显式选择 XeLaTeX 后生成 PDF，最终界面显示 0 错误、0 警告。在线字体与本机不同，页数可能不同，需以内容和实际数值核对。
 
 编译完成后打包源码，再更新网页中的下载文件：
 
@@ -70,7 +70,9 @@ python scripts/build_site.py
 
 只处理公开报告时，打包命令可使用 `python scripts/package_reports.py --public-only`。打包器采用文件白名单，包含主文件、结果宏、表格、参考文献和图，不包含本地身份配置或编译日志。
 
-网页生成器只读取公开配置 `profile.json` 和实际分析输出。作者暂缓个人主页时，`docs/index.html` 只作为项目页跳转入口。仅在公版授权开关启用时，生成器才复制 `public_report/main.pdf` 和公版源码 ZIP；不会自动发布本地含学号的 `report/main.pdf`。系统 Arial Unicode 字体用于本机中文排版，无该字体时使用 Fandol `.otf` 分支；源码包不包含系统字体。
+网页生成器只读取公开配置 `profile.json` 和实际分析输出。`docs/index.html` 为个人主页，`docs/project/index.html` 为课程项目页，两页互相链接。仅在公版授权开关启用时，生成器才复制 `public_report/main.pdf` 和公版源码 ZIP；不会自动发布本地含学号的 `report/main.pdf`。系统 Arial Unicode 字体用于本机中文排版，无该字体时使用 Fandol `.otf` 分支；源码包不包含系统字体。
+
+Overleaf 的默认编译器可能是 pdfLaTeX。首行 `% !TEX program = xelatex` 是编辑器提示，不能代替平台设置；请在项目设置的“编译器”中明确选择 **XeLaTeX**，主文件选择 `main.tex`。如果第 6 行 `\IfFontExistsTF` 报未定义，先检查这一设置。平台的编译时限提示与语法错误是不同问题；是否完整编译还需结合日志、引用和实际 PDF 检查。
 
 ## 方法要点
 

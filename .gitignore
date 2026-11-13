@@ -26,3 +26,7 @@ PROGRESS.md
 *.synctex.gz
 /public_report/preview*.png
 /public_report/page-*.png
+# 本地个人主页预览、照片选择记录与验收截图
+/docs/assets/home-preview*.png
+/docs/assets/home-qa.json
+/docs/assets/home-photo-sources.json

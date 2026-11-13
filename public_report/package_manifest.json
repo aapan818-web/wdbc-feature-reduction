@@ -1,13 +1,13 @@
 {
   "visibility": "public",
   "archive": "overleaf_source.zip",
-  "archive_sha256": "596157a70c9c3153b9998a609760aa62807f18993921dd64dd3c64998d938bbf",
-  "compiled_pdf_sha256": "240f06430314b5c7064c3daa5a92fc86c4524f9ad46b84f45d59b5ecdd3f709d",
+  "archive_sha256": "3c58bf4fa6a9e4441d703faae891a4bcb2571da9d0140fe6641f4301625e3696",
+  "compiled_pdf_sha256": "f1582502cc99f365b4871c177dbd5c7eb759d0e5a531f2dbfb3a555986cc48a9",
   "pdf_pages": 13,
   "entries": [
     {
       "path": "README.md",
-      "sha256": "2cb030cf79aebf100619ae8ef3ba5a452775ce6efdda94e2b0fad5eff2cc2414"
+      "sha256": "019475ba6b07947444171582228e5bc1e4f8a3599d803dead8667178d94aace3"
     },
     {
       "path": "figures/auc_differences.pdf",
@@ -39,7 +39,7 @@
     },
     {
       "path": "main.tex",
-      "sha256": "1e0f96935a9571c6239eef949c1311d0a27d8622a36e80b2a84952278df227e8"
+      "sha256": "06fbf0de0a9a307136a817fadacf311f9aa45ccfd05de68a6bf26ad2786f53ec"
     },
     {
       "path": "references.bib",
@@ -47,7 +47,7 @@
     },
     {
       "path": "results_macros.tex",
-      "sha256": "04bab1e15cfd4253e37490983289767f85242e48547f91d56b5dd9287a234fcb"
+      "sha256": "f54b78d8fd579a479eb628ce21b9061805dea41d28dba187f304ec584f499bd3"
     },
     {
       "path": "tables/classification.tex",
@@ -88,5 +88,6 @@
   ],
   "source_only": true,
   "font_files_bundled": false,
-  "online_overleaf_compilation_tested": false
+  "online_overleaf_compilation_tested": false,
+  "online_overleaf_status_scope": "This archive revision is not certified online by the packaging script"
 }

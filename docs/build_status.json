@@ -4,9 +4,9 @@
   "public_report_source_available": true,
   "repository_link_available": true,
   "display_name": "潘冠宇",
-  "homepage_status": "deferred_by_user",
-  "personal_homepage_built": false,
-  "entrypoint_kind": "project_redirect",
+  "homepage_status": "ready_for_publication",
+  "personal_homepage_built": true,
+  "entrypoint_kind": "personal_homepage",
   "outputs": [
     "docs/project/index.html",
     "docs/index.html"
