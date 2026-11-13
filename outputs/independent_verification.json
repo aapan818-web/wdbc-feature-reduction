@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scope": "saved data, fold membership, saved estimators, predictions and numerical summaries",
+  "checks": [
+    "569 original rows; disjoint 455/114 partitions",
+    "CV validation memberships cover development rows once",
+    "test labels match original data",
+    "manual pairwise AUC and confusion counts match all 5 models",
+    "saved estimator predictions reproduce CSV",
+    "final LR scalers use development data only",
+    "selected feature names and counts match fitted models",
+    "paired-bootstrap intervals reproduce from saved draws",
+    "rank-biserial signs and values match pairwise comparisons",
+    "default LR chosen by CV before test",
+    "source hash matches manifest"
+  ],
+  "limits": "Does not establish external validity, sampling independence, clinical utility or user understanding."
+}

@@ -1,0 +1,8 @@
+assumption_checks.py copied without modification from the installed statistical-analysis skill.
+Source: Scientific Agent Skills by K-Dense Inc., statistical-analysis 2.0, scripts/assumption_checks.py.
+Skill metadata license: MIT.
+Local installation source commit: 5f2bc0341354fd5590aef76a533ada1e1e5b4e62.
+Reference: Kassis, T., Agarwal, V., He, Y., Patel, D., & Brueckner, A. M. (2026).
+Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents.
+https://doi.org/10.48550/arXiv.2609.00065
+The helper is used for descriptive screens, not to choose a test automatically or to certify independence.

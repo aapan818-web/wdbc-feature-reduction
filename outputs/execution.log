@@ -1,0 +1,18 @@
+[1/6] Data checked and split: {'development': {'n': 455, 'benign': 285, 'malignant': 170}, 'test': {'n': 114, 'benign': 72, 'malignant': 42}}
+[OK] Diagnostic calculations completed. Missing-value counts are in each result.
+-> These screens do not establish assumptions or select a test. Review design, estimand and plots.
+[OK] Diagnostic calculations completed. Missing-value counts are in each result.
+-> These screens do not establish assumptions or select a test. Review design, estimand and plots.
+[OK] Diagnostic calculations completed. Missing-value counts are in each result.
+-> These screens do not establish assumptions or select a test. Review design, estimand and plots.
+[2/6] Development statistics and diagnostic screens completed.
+[3/6] CV completed; default model frozen before test: LR30
+[4/6] Prespecified final models fitted and test predictions saved.
+[5/6] Summary JSON written. Creating figures.
+[6/6] Finished; all assertions passed.
+DUMMY CV 0.5 TEST {'auc': 0.5, 'ap': 0.3684210526315789, 'sensitivity': 0.0, 'specificity': 1.0, 'precision': None, 'f1': 0.0, 'accuracy': 0.631578947368421, 'tn': 72, 'fp': 0, 'fn': 42, 'tp': 0, 'threshold': 0.5, 'auc_ci_low': 0.5, 'auc_ci_high': 0.5}
+LR30 CV 0.9957688338493291 TEST {'auc': 0.996031746031746, 'ap': 0.994273631904294, 'sensitivity': 0.9285714285714286, 'specificity': 0.9861111111111112, 'precision': 0.975, 'f1': 0.9512195121951219, 'accuracy': 0.9649122807017544, 'tn': 71, 'fp': 1, 'fn': 3, 'tp': 39, 'threshold': 0.5, 'auc_ci_low': 0.9871031746031746, 'auc_ci_high': 1.0}
+LR10 CV 0.9851393188854489 TEST {'auc': 0.9973544973544974, 'ap': 0.9956133636011686, 'sensitivity': 0.9047619047619048, 'specificity': 0.9861111111111112, 'precision': 0.9743589743589743, 'f1': 0.9382716049382716, 'accuracy': 0.956140350877193, 'tn': 71, 'fp': 1, 'fn': 4, 'tp': 38, 'threshold': 0.5, 'auc_ci_low': 0.9910631613756613, 'auc_ci_high': 1.0}
+LR5 CV 0.9850361197110423 TEST {'auc': 0.9957010582010583, 'ap': 0.9926523864559361, 'sensitivity': 0.9285714285714286, 'specificity': 0.9861111111111112, 'precision': 0.975, 'f1': 0.9512195121951219, 'accuracy': 0.9649122807017544, 'tn': 71, 'fp': 1, 'fn': 3, 'tp': 39, 'threshold': 0.5, 'auc_ci_low': 0.9867724867724867, 'auc_ci_high': 1.0}
+RF30 CV 0.9869969040247678 TEST {'auc': 0.9940476190476191, 'ap': 0.9909539599459604, 'sensitivity': 0.9047619047619048, 'specificity': 1.0, 'precision': 1.0, 'f1': 0.95, 'accuracy': 0.9649122807017544, 'tn': 72, 'fp': 0, 'fn': 4, 'tp': 38, 'threshold': 0.5, 'auc_ci_low': 0.9837880291005291, 'auc_ci_high': 1.0}
+PAIRED DIFFERENCES [{'contrast': 'LR5-LR30', 'estimate': -0.0003306878306877925, 'ci_low': -0.010251322751322681, 'ci_high': 0.0092592592592593}, {'contrast': 'LR10-LR30', 'estimate': 0.001322751322751392, 'ci_low': -0.006283068783068835, 'ci_high': 0.010251322751322681}]

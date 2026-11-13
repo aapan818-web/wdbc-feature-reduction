@@ -1,0 +1,13 @@
+{
+  "rows": 569,
+  "input_features": 30,
+  "missing_feature_values": 0,
+  "nonfinite_feature_values": 0,
+  "duplicate_ids": 0,
+  "duplicate_feature_rows": 0,
+  "duplicate_full_rows": 0,
+  "unknown_labels": 0,
+  "excluded_rows": 0,
+  "constant_features": [],
+  "id_excluded_from_predictors": true
+}

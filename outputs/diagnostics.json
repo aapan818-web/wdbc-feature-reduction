@@ -1,0 +1,329 @@
+{
+  "mean_radius": {
+    "outliers_per_group": {
+      "M": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "n": 170,
+        "n_missing": 0,
+        "n_outliers": 3,
+        "pct_outliers": 1.7647058823529411,
+        "outlier_indices": [
+          3,
+          8,
+          11
+        ],
+        "outlier_labels": [
+          212,
+          180,
+          461
+        ],
+        "outlier_values": [
+          28.11,
+          27.22,
+          27.42
+        ],
+        "lower_bound": 8.35,
+        "upper_bound": 26.490000000000002,
+        "interpretation": "Flagged 3 observations (1.8% of non-missing data)",
+        "recommendation": "Investigate provenance and data-entry errors. Retain valid observations; justify exclusions and report prespecified sensitivity/robust analyses."
+      },
+      "B": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "n": 285,
+        "n_missing": 0,
+        "n_outliers": 5,
+        "pct_outliers": 1.7543859649122806,
+        "outlier_indices": [
+          154,
+          210,
+          229,
+          243,
+          264
+        ],
+        "outlier_labels": [
+          157,
+          101,
+          491,
+          538,
+          539
+        ],
+        "outlier_values": [
+          16.84,
+          6.981,
+          17.85,
+          7.729,
+          7.691
+        ],
+        "lower_bound": 7.795000000000003,
+        "upper_bound": 16.714999999999996,
+        "interpretation": "Flagged 5 observations (1.8% of non-missing data)",
+        "recommendation": "Investigate provenance and data-entry errors. Retain valid observations; justify exclusions and report prespecified sensitivity/robust analyses."
+      }
+    },
+    "normality_per_group": [
+      {
+        "Group": "M",
+        "N": 170,
+        "N_missing": 0,
+        "W": 0.9770171847424092,
+        "p-value": 0.006384333643464023,
+        "Normal": "No"
+      },
+      {
+        "Group": "B",
+        "N": 285,
+        "N_missing": 0,
+        "W": 0.9962965281589105,
+        "p-value": 0.7457648968844914,
+        "Normal": "Yes"
+      }
+    ],
+    "homogeneity": {
+      "test": "Levene",
+      "center": "median",
+      "statistic": 68.13361313666545,
+      "p_value": 1.6849591973220882e-15,
+      "is_homogeneous": false,
+      "variance_equality_not_rejected": false,
+      "variance_ratio": 3.408729527307769,
+      "groups": [
+        "M",
+        "B"
+      ],
+      "variances": [
+        10.828102488687783,
+        3.1765801310847537
+      ],
+      "n_missing": 0,
+      "interpretation": "Equal variances rejected (F = 68.134, p = 1.68e-15); non-rejection is not evidence of equality.",
+      "recommendation": "For independent mean comparisons, prespecify Welch inference rather than choosing pooled versus Welch by a variance pretest."
+    }
+  },
+  "mean_texture": {
+    "outliers_per_group": {
+      "M": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "n": 170,
+        "n_missing": 0,
+        "n_outliers": 5,
+        "pct_outliers": 2.9411764705882355,
+        "outlier_indices": [
+          54,
+          84,
+          93,
+          130,
+          148
+        ],
+        "outlier_labels": [
+          0,
+          172,
+          259,
+          239,
+          265
+        ],
+        "outlier_values": [
+          10.38,
+          11.89,
+          33.56,
+          39.28,
+          31.12
+        ],
+        "lower_bound": 12.191249999999997,
+        "upper_bound": 31.00125,
+        "interpretation": "Flagged 5 observations (2.9% of non-missing data)",
+        "recommendation": "Investigate provenance and data-entry errors. Retain valid observations; justify exclusions and report prespecified sensitivity/robust analyses."
+      },
+      "B": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "n": 285,
+        "n_missing": 0,
+        "n_outliers": 12,
+        "pct_outliers": 4.2105263157894735,
+        "outlier_indices": [
+          39,
+          52,
+          54,
+          67,
+          109,
+          131,
+          156,
+          163,
+          177,
+          185,
+          196,
+          235
+        ],
+        "outlier_labels": [
+          473,
+          552,
+          231,
+          555,
+          471,
+          452,
+          561,
+          543,
+          557,
+          377,
+          232,
+          238
+        ],
+        "outlier_values": [
+          29.97,
+          29.43,
+          27.08,
+          27.61,
+          28.14,
+          28.23,
+          29.37,
+          28.06,
+          27.88,
+          28.21,
+          33.81,
+          27.85
+        ],
+        "lower_bound": 8.32,
+        "upper_bound": 27.04,
+        "interpretation": "Flagged 12 observations (4.2% of non-missing data)",
+        "recommendation": "Investigate provenance and data-entry errors. Retain valid observations; justify exclusions and report prespecified sensitivity/robust analyses."
+      }
+    },
+    "normality_per_group": [
+      {
+        "Group": "M",
+        "N": 170,
+        "N_missing": 0,
+        "W": 0.9661403729114917,
+        "p-value": 0.00036999688505581855,
+        "Normal": "No"
+      },
+      {
+        "Group": "B",
+        "N": 285,
+        "N_missing": 0,
+        "W": 0.9533497018074322,
+        "p-value": 6.789547964275895e-08,
+        "Normal": "No"
+      }
+    ],
+    "homogeneity": {
+      "test": "Levene",
+      "center": "median",
+      "statistic": 0.27935069663749845,
+      "p_value": 0.5973859505002719,
+      "is_homogeneous": true,
+      "variance_equality_not_rejected": true,
+      "variance_ratio": 1.0442548652227308,
+      "groups": [
+        "M",
+        "B"
+      ],
+      "variances": [
+        14.881335429864254,
+        15.539906923647147
+      ],
+      "n_missing": 0,
+      "interpretation": "Equal variances not rejected (F = 0.279, p = 0.597); non-rejection is not evidence of equality.",
+      "recommendation": "For independent mean comparisons, prespecify Welch inference rather than choosing pooled versus Welch by a variance pretest."
+    }
+  },
+  "mean_smoothness": {
+    "outliers_per_group": {
+      "M": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "n": 170,
+        "n_missing": 0,
+        "n_outliers": 3,
+        "pct_outliers": 1.7647058823529411,
+        "outlier_indices": [
+          15,
+          27,
+          35
+        ],
+        "outlier_labels": [
+          3,
+          105,
+          122
+        ],
+        "outlier_values": [
+          0.1425,
+          0.1398,
+          0.1447
+        ],
+        "lower_bound": 0.06934999999999997,
+        "upper_bound": 0.13595000000000002,
+        "interpretation": "Flagged 3 observations (1.8% of non-missing data)",
+        "recommendation": "Investigate provenance and data-entry errors. Retain valid observations; justify exclusions and report prespecified sensitivity/robust analyses."
+      },
+      "B": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "n": 285,
+        "n_missing": 0,
+        "n_outliers": 3,
+        "pct_outliers": 1.0526315789473684,
+        "outlier_indices": [
+          12,
+          27,
+          29
+        ],
+        "outlier_labels": [
+          504,
+          520,
+          76
+        ],
+        "outlier_values": [
+          0.1634,
+          0.1371,
+          0.1291
+        ],
+        "lower_bound": 0.05497499999999999,
+        "upper_bound": 0.12765500000000002,
+        "interpretation": "Flagged 3 observations (1.1% of non-missing data)",
+        "recommendation": "Investigate provenance and data-entry errors. Retain valid observations; justify exclusions and report prespecified sensitivity/robust analyses."
+      }
+    },
+    "normality_per_group": [
+      {
+        "Group": "M",
+        "N": 170,
+        "N_missing": 0,
+        "W": 0.9823571733330185,
+        "p-value": 0.02959368126200524,
+        "Normal": "No"
+      },
+      {
+        "Group": "B",
+        "N": 285,
+        "N_missing": 0,
+        "W": 0.9632358314777278,
+        "p-value": 1.219267428062933e-06,
+        "Normal": "No"
+      }
+    ],
+    "homogeneity": {
+      "test": "Levene",
+      "center": "median",
+      "statistic": 0.17371236530228332,
+      "p_value": 0.6770307914911419,
+      "is_homogeneous": true,
+      "variance_equality_not_rejected": true,
+      "variance_ratio": 1.0746946225107665,
+      "groups": [
+        "M",
+        "B"
+      ],
+      "variances": [
+        0.00016643768423250957,
+        0.00017886968422782304
+      ],
+      "n_missing": 0,
+      "interpretation": "Equal variances not rejected (F = 0.174, p = 0.677); non-rejection is not evidence of equality.",
+      "recommendation": "For independent mean comparisons, prespecify Welch inference rather than choosing pooled versus Welch by a variance pretest."
+    }
+  }
+}

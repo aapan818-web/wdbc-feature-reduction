@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "method": "Full second execution from preserved raw data with unchanged configuration",
+  "csv_tables_bitwise_identical": [
+    "auc_comparisons.csv",
+    "cv_fold_assignments.csv",
+    "cv_fold_metrics.csv",
+    "cv_selected_features.csv",
+    "feature_selection_frequency.csv",
+    "final_selected_features.csv",
+    "group_comparisons.csv",
+    "logistic_coefficients.csv",
+    "model_cv_summary.csv",
+    "model_test_metrics.csv",
+    "sample_counts.csv",
+    "spearman_correlations.csv",
+    "test_bootstrap_auc.csv"
+  ],
+  "summary_equal_except_run_timestamps": true,
+  "original_course_data_hash_matches": true,
+  "limitations": "PDF internal timestamps and runtime manifests are expected to change; this checks numerical repeatability, not external validity."
+}

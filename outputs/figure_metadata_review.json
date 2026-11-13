@@ -1,0 +1,122 @@
+[
+  {
+    "file": "outputs/figures/auc_differences.pdf",
+    "pages": 1,
+    "width_pt": 532.8,
+    "height_pt": 223.2,
+    "font_types": [
+      "/Type0",
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/confusion_DUMMY.pdf",
+    "pages": 1,
+    "width_pt": 331.2,
+    "height_pt": 309.6,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/confusion_LR10.pdf",
+    "pages": 1,
+    "width_pt": 331.2,
+    "height_pt": 309.6,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/confusion_LR30.pdf",
+    "pages": 1,
+    "width_pt": 331.2,
+    "height_pt": 309.6,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/confusion_LR5.pdf",
+    "pages": 1,
+    "width_pt": 331.2,
+    "height_pt": 309.6,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/confusion_RF30.pdf",
+    "pages": 1,
+    "width_pt": 331.2,
+    "height_pt": 309.6,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/diagnostic_qq.pdf",
+    "pages": 1,
+    "width_pt": 612.0,
+    "height_pt": 741.6,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/feature_distributions.pdf",
+    "pages": 1,
+    "width_pt": 756.0,
+    "height_pt": 266.4,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/logistic_coefficients.pdf",
+    "pages": 1,
+    "width_pt": 936.0,
+    "height_pt": 576.0,
+    "font_types": [
+      "/Type0",
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/model_performance.pdf",
+    "pages": 1,
+    "width_pt": 734.4,
+    "height_pt": 302.4,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/selection_frequency.pdf",
+    "pages": 1,
+    "width_pt": 432.0,
+    "height_pt": 316.8,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/spearman_heatmap.pdf",
+    "pages": 1,
+    "width_pt": 698.4,
+    "height_pt": 648.0,
+    "font_types": [
+      "/Type0"
+    ]
+  },
+  {
+    "file": "outputs/figures/test_roc.pdf",
+    "pages": 1,
+    "width_pt": 475.2,
+    "height_pt": 396.0,
+    "font_types": [
+      "/Type0",
+      "/Type0"
+    ]
+  }
+]

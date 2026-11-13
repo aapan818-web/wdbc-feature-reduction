@@ -1,0 +1,18 @@
+# 本地环境、临时文件和编译中间件
+.tools/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/
+_local/
+profile.private.json
+# 本地课程提交版含学号；公开版待作者确认后单独准备
+/report/
+# 可由分析重建的本地逐行输出与模型；公开仓库以汇总结果为主
+/data/processed/
+/outputs/models/
+/outputs/predictions/
+/outputs/review_montage.png
+/docs/site-*.png
+PROGRESS.md

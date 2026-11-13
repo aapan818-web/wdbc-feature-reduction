@@ -1,0 +1,442 @@
+{
+  "started_at_utc": "2026-11-13T09:26:13.472359+00:00",
+  "completed_at_utc": "2026-11-13T09:26:18.756278+00:00",
+  "elapsed_seconds": 5.284186499993666,
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "joblib": "1.6.0",
+    "pillow": "13.0.0"
+  },
+  "config_sha256": "568d613daa9ff3eb30c76d8c2022e689c740038b489a2fad5889f6282764734b",
+  "source_sha256": "d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a",
+  "figures": [
+    {
+      "stem": "feature_distributions",
+      "title": "Prespecified feature distributions",
+      "alt_text": "Box plots and all observed development values for mean radius, texture and smoothness, separated by benign and malignant labels.",
+      "source_data": "data/processed/wdbc_labeled.csv + data/processed/split_assignments.csv",
+      "uncertainty": "Box: median and IQR; whiskers: 1.5 IQR; all points retained, including extreme values.",
+      "transformations": [
+        "Development records only",
+        "Horizontal jitter for readability; seed fixed; vertical values unmodified"
+      ],
+      "paths": [
+        "figures/feature_distributions.png",
+        "figures/feature_distributions.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          3150,
+          1110
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/feature_distributions.png": "420f8f37f93729a10f0328b1aed87f57bd9f3e095fbef8561adf5b17afe6e5c4",
+        "figures/feature_distributions.pdf": "21c2510e91d9b4b721335ac74456d8281eaa73d046d6ddf0cd8c2e0b24c56f7f"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "spearman_heatmap",
+      "title": "Development-set feature correlations",
+      "alt_text": "A 30 by 30 Spearman correlation heatmap, fixed from -1 to +1; white separators mark mean, standard-error and worst feature families. Numerical matrix is available as a CSV.",
+      "source_data": "tables/spearman_correlations.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Development records only; Spearman rank correlation"
+      ],
+      "paths": [
+        "figures/spearman_heatmap.png",
+        "figures/spearman_heatmap.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          2910,
+          2700
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/spearman_heatmap.png": "d01e3b8b0c0e18c1d5652eac1c180dc0e4ac1758c93790a736b7623f30a8e1c0",
+        "figures/spearman_heatmap.pdf": "7a4222bbd5792226d1bc4bff7e980b710d0cc78ffbba3849804f754fb00878d7"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "model_performance",
+      "title": "Prespecified model comparison",
+      "alt_text": "Five models compared on a common ROC-AUC scale. Left: individual validation-fold scores, mean and SD. Right: test AUC with fixed-model conditional percentile confidence intervals. SD is not a confidence interval.",
+      "source_data": "tables/model_cv_summary.csv + tables/cv_fold_metrics.csv + tables/model_test_metrics.csv",
+      "uncertainty": "Left: sample SD across 5 correlated folds; right: 95% stratified percentile bootstrap, 1000 paired resamples; fixed models.",
+      "transformations": [],
+      "paths": [
+        "figures/model_performance.png",
+        "figures/model_performance.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          3060,
+          1260
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/model_performance.png": "ab48aaf9affb510aba8a137436357c19ad20be00000fa8b78976e05aa9b1deca",
+        "figures/model_performance.pdf": "31651440dac3d4582feb8f9e7219ae1f27c797b36498432da4d3ae0ae0a7ed37"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "test_roc",
+      "title": "Held-out ROC curves",
+      "alt_text": "ROC curves for the five prespecified models, using malignant probabilities on identical test records. Color and line styles distinguish models.",
+      "source_data": "predictions/test_predictions.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Positive label M=1; ROC from continuous probabilities, not predicted classes"
+      ],
+      "paths": [
+        "figures/test_roc.png",
+        "figures/test_roc.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1980,
+          1650
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/test_roc.png": "3e689f2d71bca33139e22c12197f7b03a7a17337c6fc6a30290ed7ab99d74806",
+        "figures/test_roc.pdf": "bb25373b818c81041c51b58fa94669b91ef605792b80e85e0512828f0dc9dd5f"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "confusion_DUMMY",
+      "title": "DUMMY test confusion matrix",
+      "alt_text": "Rows are true classes and columns are predicted classes. TN=72, FP=0, FN=42, TP=0. Fixed threshold 0.5. Same count scale for every model.",
+      "source_data": "tables/model_test_metrics.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Probabilities >= 0.5 assigned malignant"
+      ],
+      "paths": [
+        "figures/confusion_DUMMY.png",
+        "figures/confusion_DUMMY.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1380,
+          1290
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/confusion_DUMMY.png": "c66cf17d78984555fca4ac6134af6623cf435444ce1f55f31737dc6f383d0a28",
+        "figures/confusion_DUMMY.pdf": "79c17b13f76503f56bf1692db4d969c4d4e81643729d44285abaedb90c9ef3b9"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "confusion_LR30",
+      "title": "LR30 test confusion matrix",
+      "alt_text": "Rows are true classes and columns are predicted classes. TN=71, FP=1, FN=3, TP=39. Fixed threshold 0.5. Same count scale for every model.",
+      "source_data": "tables/model_test_metrics.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Probabilities >= 0.5 assigned malignant"
+      ],
+      "paths": [
+        "figures/confusion_LR30.png",
+        "figures/confusion_LR30.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1380,
+          1290
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/confusion_LR30.png": "0f467ab4c752c0f3116d9e381564f4547aa524713dfd562d377216b616880f2a",
+        "figures/confusion_LR30.pdf": "df585b42f55617d477e04dd4fb50d9c52200159b9877d42bfd6e22097294499a"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "confusion_LR10",
+      "title": "LR10 test confusion matrix",
+      "alt_text": "Rows are true classes and columns are predicted classes. TN=71, FP=1, FN=4, TP=38. Fixed threshold 0.5. Same count scale for every model.",
+      "source_data": "tables/model_test_metrics.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Probabilities >= 0.5 assigned malignant"
+      ],
+      "paths": [
+        "figures/confusion_LR10.png",
+        "figures/confusion_LR10.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1380,
+          1290
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/confusion_LR10.png": "6de9b71d25aed1701cc5efdf21c3311496725f6cc4ff3c6e5ddcd7c4a493ca38",
+        "figures/confusion_LR10.pdf": "af129d498e0988c97e14ca11f2a7cb05c7f7e90af00621352a9b6639bf9e2d17"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "confusion_LR5",
+      "title": "LR5 test confusion matrix",
+      "alt_text": "Rows are true classes and columns are predicted classes. TN=71, FP=1, FN=3, TP=39. Fixed threshold 0.5. Same count scale for every model.",
+      "source_data": "tables/model_test_metrics.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Probabilities >= 0.5 assigned malignant"
+      ],
+      "paths": [
+        "figures/confusion_LR5.png",
+        "figures/confusion_LR5.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1380,
+          1290
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/confusion_LR5.png": "01abff363837d27ec59931cdee08f6bc3ba0d81def93bffd2202b6d54fe754a0",
+        "figures/confusion_LR5.pdf": "9b94ca713c0d4a677c4b12452616bf883566a68654a4960f03a06548548e4c7a"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "confusion_RF30",
+      "title": "RF30 test confusion matrix",
+      "alt_text": "Rows are true classes and columns are predicted classes. TN=72, FP=0, FN=4, TP=38. Fixed threshold 0.5. Same count scale for every model.",
+      "source_data": "tables/model_test_metrics.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Probabilities >= 0.5 assigned malignant"
+      ],
+      "paths": [
+        "figures/confusion_RF30.png",
+        "figures/confusion_RF30.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1380,
+          1290
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/confusion_RF30.png": "8bf745f7a90701671ee02c66c209e6aa9cdd46244ad017e6b37a62f60e3dfaee",
+        "figures/confusion_RF30.pdf": "0ac232a1268c8d84ebcb8cbb711eb4c825a9740dde4213b8b240bbf786ca48d4"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "selection_frequency",
+      "title": "Exploratory selection stability",
+      "alt_text": "Count of CV training folds selecting each feature for LR5 and LR10. Only features selected at least once are plotted; complete counts for all 30 variables are in the CSV. Counts are descriptive, not inclusion probabilities.",
+      "source_data": "tables/feature_selection_frequency.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Count only; features never selected omitted from this plot but retained in CSV"
+      ],
+      "paths": [
+        "figures/selection_frequency.png",
+        "figures/selection_frequency.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          1800,
+          1320
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/selection_frequency.png": "88388640dfe9f5baa1cf1879a9162a8104de73de8d13f0dd5ce14e9e0a03e13a",
+        "figures/selection_frequency.pdf": "02fc5430682cc6897384f94729f9746a462c00747ddefa5142aec3a7e7c6f162"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "logistic_coefficients",
+      "title": "Standardized model coefficients",
+      "alt_text": "Signed coefficients for the three final logistic models, each using its full-development-set scaler and selected features. Axes share a coefficient range. Coefficients describe model-conditional associations, not causal effects or uncertainty intervals.",
+      "source_data": "tables/logistic_coefficients.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Input standardized using full development mean and SD; L2-regularized coefficients"
+      ],
+      "paths": [
+        "figures/logistic_coefficients.png",
+        "figures/logistic_coefficients.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          3900,
+          2400
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/logistic_coefficients.png": "e84beed2e450b7eee54f8840d09972028b947f6266b2c77747eccff705058eeb",
+        "figures/logistic_coefficients.pdf": "8bfa617135c33b2fc950f19a1e871f250ac01d97c1791d08030edc625656f61f"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "auc_differences",
+      "title": "Paired test AUC differences",
+      "alt_text": "Differences in test ROC-AUC for LR5 minus LR30 and LR10 minus LR30 with paired stratified percentile 95% bootstrap intervals. A zero-crossing interval does not establish equivalence.",
+      "source_data": "tables/auc_comparisons.csv",
+      "uncertainty": "95% percentile intervals from 1000 paired resamples, stratified by true class; models fixed.",
+      "transformations": [],
+      "paths": [
+        "figures/auc_differences.png",
+        "figures/auc_differences.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          2220,
+          930
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/auc_differences.png": "2c7e51f9b2613834010091ff696b0836839387c97c6fcf93d31e101b9a4fcbad",
+        "figures/auc_differences.pdf": "947d55c8938c757e7cac4e466b9056860c355b8a5ce81b109821b07a2852334a"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    },
+    {
+      "stem": "diagnostic_qq",
+      "title": "Development distribution diagnostics",
+      "alt_text": "Six groupwise Q-Q plots for the three prespecified features. Deviations describe distribution shapes; they neither certify independence nor automatically select the hypothesis test.",
+      "source_data": "diagnostics.json + data/processed/wdbc_labeled.csv",
+      "uncertainty": "None",
+      "transformations": [
+        "Development records only; no outlier deletion or test switching"
+      ],
+      "paths": [
+        "figures/diagnostic_qq.png",
+        "figures/diagnostic_qq.pdf"
+      ],
+      "raster_metadata": {
+        "pixels": [
+          2550,
+          3090
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "mode": "RGBA",
+        "opaque": true
+      },
+      "sha256": {
+        "figures/diagnostic_qq.png": "d16e3c4b516e3163ca8544605bd19ed1b1f3f375126d371bcc0951f9550422c4",
+        "figures/diagnostic_qq.pdf": "0ceb737302829b555cd4471fb8c58a31f4252f2d3ceb324f1cf3dba86f51b0ad"
+      },
+      "destination": "General course report and website; no journal-specific compliance claim."
+    }
+  ],
+  "assertions_passed": [
+    "source_and_config_unchanged",
+    "disjoint_development_and_test",
+    "same_cv_folds_for_all_models",
+    "per_fold_scaler_statistics_match_training_only",
+    "expected_number_of_selected_features",
+    "test_confusion_counts_match_class_counts",
+    "dummy_auc_0.5_and_zero_malignant_recall",
+    "no_convergence_warning",
+    "json_no_nan"
+  ],
+  "code_sha256": {
+    "run_analysis.py": "5632fc30d0c3e3ceaf10c9e5fec1429a9340a27db3efa149b353e07959efa565",
+    "src/__init__.py": "055c7846fc01a2e6115481d48e06d42ebb7df234be5bcafbd743db5277df4701",
+    "src/analysis.py": "f876cd1db0b0c9b42ae8b7e9367a094272bc04ffb134f2f03513692879fcbb13",
+    "src/figures.py": "fa76b3963a92e8690477909aa63c38700e779ea93fbbb2fea62c7102eae09b1e",
+    "src/vendor/__init__.py": "b74fab75186602cf6749c8df68f43ed8e7609b41ab31cb6ee63871cb0782789c",
+    "src/vendor/assumption_checks.py": "3e37a4e04407b5f040f103962ed0e73935d114d3892ee45b5a06a1da42c10341"
+  },
+  "skill_citation": "Kassis et al. (2026). Scientific Agent Skills. https://doi.org/10.48550/arXiv.2609.00065"
+}
