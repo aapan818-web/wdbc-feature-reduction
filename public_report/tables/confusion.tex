@@ -1,0 +1,17 @@
+\begin{center}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lrrrr}
+\toprule
+模型 & TN：正确良性 & FP：误判恶性 & FN：漏判恶性 & TP：正确恶性 \tabularnewline
+\midrule
+DUMMY & 72 & 0 & 42 & 0 \tabularnewline
+LR30 & 71 & 1 & 3 & 39 \tabularnewline
+LR10 & 71 & 1 & 4 & 38 \tabularnewline
+LR5 & 71 & 1 & 3 & 39 \tabularnewline
+RF30 & 72 & 0 & 4 & 38 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize 全部计数来自同一最终测试集。准确率较高不意味着没有漏判。}

@@ -1,0 +1,92 @@
+{
+  "visibility": "public",
+  "archive": "overleaf_source.zip",
+  "archive_sha256": "596157a70c9c3153b9998a609760aa62807f18993921dd64dd3c64998d938bbf",
+  "compiled_pdf_sha256": "240f06430314b5c7064c3daa5a92fc86c4524f9ad46b84f45d59b5ecdd3f709d",
+  "pdf_pages": 13,
+  "entries": [
+    {
+      "path": "README.md",
+      "sha256": "2cb030cf79aebf100619ae8ef3ba5a452775ce6efdda94e2b0fad5eff2cc2414"
+    },
+    {
+      "path": "figures/auc_differences.pdf",
+      "sha256": "947d55c8938c757e7cac4e466b9056860c355b8a5ce81b109821b07a2852334a"
+    },
+    {
+      "path": "figures/feature_distributions.pdf",
+      "sha256": "21c2510e91d9b4b721335ac74456d8281eaa73d046d6ddf0cd8c2e0b24c56f7f"
+    },
+    {
+      "path": "figures/logistic_coefficients.pdf",
+      "sha256": "8bfa617135c33b2fc950f19a1e871f250ac01d97c1791d08030edc625656f61f"
+    },
+    {
+      "path": "figures/model_performance.pdf",
+      "sha256": "31651440dac3d4582feb8f9e7219ae1f27c797b36498432da4d3ae0ae0a7ed37"
+    },
+    {
+      "path": "figures/selection_frequency.pdf",
+      "sha256": "02fc5430682cc6897384f94729f9746a462c00747ddefa5142aec3a7e7c6f162"
+    },
+    {
+      "path": "figures/spearman_heatmap.pdf",
+      "sha256": "7a4222bbd5792226d1bc4bff7e980b710d0cc78ffbba3849804f754fb00878d7"
+    },
+    {
+      "path": "figures/test_roc.pdf",
+      "sha256": "bb25373b818c81041c51b58fa94669b91ef605792b80e85e0512828f0dc9dd5f"
+    },
+    {
+      "path": "main.tex",
+      "sha256": "1e0f96935a9571c6239eef949c1311d0a27d8622a36e80b2a84952278df227e8"
+    },
+    {
+      "path": "references.bib",
+      "sha256": "ff0b19cbd8a252bbc1ef67d0adb5b0a1b42cee0f351aa23220f0fbd7dd5281f5"
+    },
+    {
+      "path": "results_macros.tex",
+      "sha256": "04bab1e15cfd4253e37490983289767f85242e48547f91d56b5dd9287a234fcb"
+    },
+    {
+      "path": "tables/classification.tex",
+      "sha256": "7d8901e77837d4c3075a95cbad8cd7d2b5702d344c20a9935df6e36ae57a0417"
+    },
+    {
+      "path": "tables/confusion.tex",
+      "sha256": "a33e45c4afd57fda63074847f347b10a4afe1032b681b6e0c17276cb1eb102e4"
+    },
+    {
+      "path": "tables/differences.tex",
+      "sha256": "1efae21bded19680949e8e7901322c7fef18bf62b29b46c4ecd54278ba18b071"
+    },
+    {
+      "path": "tables/features.tex",
+      "sha256": "3e3e5dd98831c340342b654f57b7216d8bc009a164634bb90674e43fec03a189"
+    },
+    {
+      "path": "tables/performance.tex",
+      "sha256": "14dfbd81d4a9b4078d01523d622ec345b780146080eb670cfd158d94ea24e104"
+    },
+    {
+      "path": "tables/quality.tex",
+      "sha256": "b063e741fcc62fd03c6a4d3d4c7454778b27d5b7b43c238dd4cdef9a42945197"
+    },
+    {
+      "path": "tables/sample.tex",
+      "sha256": "399c3f0f14598c4c88eeecf453ae97458cb854181b396371c435ee9e42f5d029"
+    },
+    {
+      "path": "tables/statistics.tex",
+      "sha256": "4ca5ff8a07581caf14a6ce4d2089a43088236985edacaa1fc4756eb06a602ba5"
+    },
+    {
+      "path": "tables/versions.tex",
+      "sha256": "6023b009e1d7cdb5ddb650c752f3e5cb2fb06cf2bacb7b8f2445ad920351e1e7"
+    }
+  ],
+  "source_only": true,
+  "font_files_bundled": false,
+  "online_overleaf_compilation_tested": false
+}

@@ -1,0 +1,17 @@
+\begin{center}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lrrrrr}
+\toprule
+模型 & 灵敏度 & 特异度 & 精确率 & F1 & 准确率 \tabularnewline
+\midrule
+DUMMY & 0.000 & 1.000 & 未定义 & 0.000 & 0.632 \tabularnewline
+LR30 & 0.929 & 0.986 & 0.975 & 0.951 & 0.965 \tabularnewline
+LR10 & 0.905 & 0.986 & 0.974 & 0.938 & 0.956 \tabularnewline
+LR5 & 0.929 & 0.986 & 0.975 & 0.951 & 0.965 \tabularnewline
+RF30 & 0.905 & 1.000 & 1.000 & 0.950 & 0.965 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize 阈值均为 0.5。无阳性预测时精确率未定义，表中明确标出；F1 依实际评价实现报告。}

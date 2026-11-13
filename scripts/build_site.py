@@ -3,7 +3,8 @@
 
 No training or publication occurs here. Run after outputs/summary.json exists.
 Optional profile.json fields: display_name, username, bio, github_url,
-repository_url, homepage_status. The report must be report/public.pdf.
+repository_url, homepage_status, public_report_approved. Public report inputs
+are public_report/main.pdf and public_report/overleaf_source.zip.
 """
 from pathlib import Path
 import csv
@@ -90,16 +91,30 @@ def figure(path, caption, alt, wide=False):
 
 
 def download_files(profile):
-    # Only the explicitly prepared public edition may enter the website.
-    candidate = ROOT / 'report/public.pdf'
-    report = candidate if candidate.is_file() else None
-    if report:
+    # Only the approved, separately prepared public edition enters the website.
+    report = source_archive = None
+    if profile.get('public_report_approved') is True:
+        report = ROOT / 'public_report/main.pdf'
+        source_archive = ROOT / 'public_report/overleaf_source.zip'
+        for item in (report, source_archive):
+            if not item.is_file():
+                raise FileNotFoundError(f'已批准的公开报告文件尚未准备完成：{item.relative_to(ROOT)}')
         shutil.copy2(report, DOWNLOADS/'report.pdf')
+        shutil.copy2(source_archive, DOWNLOADS/'overleaf_source.zip')
+    else:
+        # Remove only build-owned public exports if public approval is withdrawn.
+        (DOWNLOADS/'report.pdf').unlink(missing_ok=True)
+        (DOWNLOADS/'overleaf_source.zip').unlink(missing_ok=True)
     shutil.copy2(OUT/'summary.json', DOWNLOADS/'summary.json')
     tables = sorted((OUT/'tables').glob('*.csv')) if (OUT/'tables').exists() else []
     for p in tables:
         shutil.copy2(p, DOWNLOADS/p.name)
-    return report, tables
+    return report, tables, source_archive
+
+
+def build_project_entry():
+    """Create a project redirect, never a substitute personal homepage."""
+    (DOCS/'index.html').write_text('''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0; url=project/index.html"><title>课程项目入口</title><link rel="stylesheet" href="assets/site.css"></head><body><main class="wrap"><section class="hero"><h1>课程项目展示</h1><p>正在进入项目页面。</p><p><a class="button primary" href="project/index.html">进入项目展示页 →</a></p></section></main></body></html>''')
 
 
 def build_home(s, p, report):
@@ -150,13 +165,13 @@ def compare_errors(summary):
             'lr5_only_wrong': len(errors['LR5'] - errors['LR30']), 'counts': counts}
 
 
-def build_project(s, p, report, tables):
+def build_project(s, p, report, tables, source_archive=None):
     models = s['models'];methods = s.get('methods', {})
     default = s.get('default_model', 'LR30')
     selected = default if default in ('LR5','LR10','LR30') else 'LR30'
     m = models[selected];t=m['test'];c=m['cv']
     source=s['source'];split=s['split'];dev=split['development'];test=split['test']
-    report_button = '<a class="button primary" href="downloads/report.pdf" download>下载完整报告 <span aria-hidden="true">↓</span></a>' if report else '<span class="button disabled">报告待确认公开范围</span>'
+    report_button = '<a class="button primary" href="downloads/report.pdf" download>下载公开报告 <span aria-hidden="true">↓</span></a>' if report else '<span class="button disabled">报告待确认公开范围</span>'
     repo = p.get('repository_url')
     code_button = f'<a class="button" href="{url(repo)}" target="_blank" rel="noopener noreferrer">项目代码 <span aria-hidden="true">↗</span></a>' if repo else f'<a class="button" href="{url(p.get("github_url"))}" target="_blank" rel="noopener noreferrer">作者 GitHub <span aria-hidden="true">↗</span></a>'
     model_rows=''.join(model_row(id_,models[id_]) for id_ in ['DUMMY','LR30','LR10','LR5','RF30'])
@@ -168,7 +183,8 @@ def build_project(s, p, report, tables):
     explanation_figs=figure(figs.get('selection_png'),'入选频次来自开发集五折训练。0–5 次是探索性稳定性描述，不等于真实入选概率。','5和10特征方案在五折训练中的特征入选频次')+figure(figs.get('coefficients_png'),'最终逻辑回归的标准化系数反映模型内的条件预测关联；系数方向与大小不代表病因或临床效应。','逻辑回归模型最终选择特征的标准化系数')
     boot_figure=figure(figs.get('bootstrap_png'),'按真实类别分层，对所有模型使用同一组重采样索引。区间反映固定模型的测试样本抽样不确定性。','减量模型相对30特征模型的测试AUC差及成对bootstrap区间')
     folds=''.join(f'<tr><th scope="row">{E(id_)}</th>'+''.join(f'<td>{number(v)}</td>' for v in models[id_]['cv']['fold_auc'])+'</tr>' for id_ in ['DUMMY','LR30','LR10','LR5','RF30'])
-    files='<a href="downloads/report.pdf" download><span>完整研究报告</span><small>PDF ↓</small></a>' if report else '<p class="small">完整报告用于课程提交；公开下载范围尚待作者确认。</p>'
+    files='<a href="downloads/report.pdf" download><span>公开研究报告</span><small>PDF ↓</small></a>' if report else '<p class="small">完整报告用于课程提交；公开下载范围尚待作者确认。</p>'
+    if source_archive:files+='<a href="downloads/overleaf_source.zip" download><span>公开报告 LaTeX 源码包</span><small>ZIP ↓</small></a>'
     files+='<a href="downloads/summary.json" download><span>全部模型汇总结果</span><small>JSON ↓</small></a>'
     labels={'test_metrics.csv':'测试集模型指标','cv_metrics.csv':'开发集各折指标','model_test_metrics.csv':'测试集模型指标','model_cv_summary.csv':'开发集模型汇总','cv_fold_metrics.csv':'开发集各折指标','auc_comparisons.csv':'成对 AUC 差比较','descriptive_statistics.csv':'预设变量统计分析','group_comparisons.csv':'预设变量组间比较','feature_selection_frequency.csv':'特征入选频次','bootstrap_comparisons.csv':'成对 bootstrap 比较'}
     for f in tables:
@@ -236,11 +252,13 @@ def main():
     (DOCS/'assets/site.css').write_text(CSS)
     (DOCS/'.nojekyll').write_text('')
     p=load_profile()
-    report,tables=download_files(p)
+    report,tables,source_archive=download_files(p)
     if p.get('homepage_status') != 'deferred_by_user':
         build_home(s,p,report)
-    build_project(s,p,report,tables)
-    status={'analysis_loaded':True,'report_available':bool(report),'repository_link_available':bool(p.get('repository_url')),'display_name':p['display_name'],'homepage_status':p.get('homepage_status'),'outputs':['docs/project/index.html']+(['docs/index.html'] if p.get('homepage_status') != 'deferred_by_user' else []),'tables_copied':len(tables)}
+    else:
+        build_project_entry()
+    build_project(s,p,report,tables,source_archive)
+    status={'analysis_loaded':True,'report_available':bool(report),'public_report_source_available':bool(source_archive),'repository_link_available':bool(p.get('repository_url')),'display_name':p['display_name'],'homepage_status':p.get('homepage_status'),'personal_homepage_built':p.get('homepage_status') != 'deferred_by_user','entrypoint_kind':'project_redirect' if p.get('homepage_status') == 'deferred_by_user' else 'personal_homepage','outputs':['docs/project/index.html','docs/index.html'],'tables_copied':len(tables)}
     (DOCS/'build_status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2))
     print(json.dumps(status,ensure_ascii=False))
 

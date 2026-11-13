@@ -1,0 +1,17 @@
+\begin{center}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lrrrr}
+\toprule
+模型 & 特征数 & 开发集 CV AUC & 测试 AUC & 测试 AUC 95\% 区间 \tabularnewline
+\midrule
+DUMMY & 0 & 0.5000 $\pm$ 0.0000 & 0.5000 & [0.5000, 0.5000] \tabularnewline
+LR30 & 30 & 0.9958 $\pm$ 0.0052 & 0.9960 & [0.9871, 1.0000] \tabularnewline
+LR10 & 10 & 0.9851 $\pm$ 0.0134 & 0.9974 & [0.9911, 1.0000] \tabularnewline
+LR5 & 5 & 0.9850 $\pm$ 0.0126 & 0.9957 & [0.9868, 1.0000] \tabularnewline
+RF30 & 30 & 0.9870 $\pm$ 0.0076 & 0.9940 & [0.9838, 1.0000] \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize CV 为共用分层五折上的均值与标准差，标准差不是置信区间。DUMMY 不利用特征与标签的关联。}

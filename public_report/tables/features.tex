@@ -1,0 +1,14 @@
+\begin{center}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l>{\raggedright\arraybackslash}p{0.79\linewidth}}
+\toprule
+模型 & 完整开发集最终拟合时保留的特征 \tabularnewline
+\midrule
+LR10 & \texttt{mean\_radius}, \texttt{mean\_perimeter}, \texttt{mean\_area}, \texttt{mean\_concavity}, \texttt{mean\_concave\_points}, \texttt{worst\_radius}, \texttt{worst\_perimeter}, \texttt{worst\_area}, \texttt{worst\_concavity}, \texttt{worst\_concave\_points} \tabularnewline
+LR5 & \texttt{mean\_perimeter}, \texttt{mean\_concave\_points}, \texttt{worst\_radius}, \texttt{worst\_perimeter}, \texttt{worst\_concave\_points} \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize 名单来自最终拟合，不是先在全数据筛选得到。不同交叉验证折可能产生不同名单。}

@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-13T12:51:35.722277+00:00",
+  "document": "main.pdf",
+  "sha256": "240f06430314b5c7064c3daa5a92fc86c4524f9ad46b84f45d59b5ecdd3f709d",
+  "pages": 13,
+  "bytes": 541046,
+  "generator_sha256": "e1adf906a9a210915be069a7d7bc713e48ee86ba0acd2b3e248f59f1e329e214",
+  "source_summary_sha256": "0504eefdd1b48e9e2cf06b1e57c53ed2df3395154fac20d5f0763344aab86209",
+  "source_predictions_sha256": "e9c5e529035258cd7ba4eed76b934f1d3a891cc43ea3b2f017e504f4768722b5",
+  "visibility": "public",
+  "checks": {
+    "source_input_hashes_match": true,
+    "model_auc_tokens_match_summary": true,
+    "all_nine_tables_and_seven_figures_present": true,
+    "identity_scope_matches_approval": true,
+    "no_overfull_boxes_missing_characters_unresolved_references": true,
+    "all_source_archive_entries_verified": true
+  },
+  "rendering": {
+    "tool": "pdftoppm",
+    "dpi": 115,
+    "public_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "private_edition_review": "first page inspected; remaining body reviewed in earlier QA, current page 10 has edition-specific source path",
+    "reviewer": "Codex; not author signoff"
+  },
+  "source_archive_sha256": "596157a70c9c3153b9998a609760aa62807f18993921dd64dd3c64998d938bbf",
+  "source_archive_standalone_local_compile_passed": true,
+  "online_overleaf_compilation_tested": false,
+  "author_review_completed": false,
+  "submission_ready": false,
+  "pending": [
+    "personal homepage content and publication",
+    "author learning review and final submission"
+  ],
+  "known_limits": [
+    "Dense correlation labels require PDF zoom; figures retain vector data.",
+    "Internal test estimates do not demonstrate external clinical validity."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "document": "main.tex",
+  "source_summary": "outputs/summary.json",
+  "source_summary_sha256": "0504eefdd1b48e9e2cf06b1e57c53ed2df3395154fac20d5f0763344aab86209",
+  "source_predictions": "outputs/predictions/test_predictions.csv",
+  "source_predictions_sha256": "e9c5e529035258cd7ba4eed76b934f1d3a891cc43ea3b2f017e504f4768722b5",
+  "raw_source_sha256": "d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a",
+  "evidence": [
+    {
+      "id": "E001",
+      "type": "local_dataset",
+      "locator": "data/raw/wdbc.csv",
+      "supports": "record counts, original features and labels",
+      "verification": "machine checks in analysis; human review pending"
+    },
+    {
+      "id": "E002",
+      "type": "generated_results",
+      "locator": "outputs/summary.json",
+      "supports": "aggregate analysis results and generated tables",
+      "verification": "generated from saved results; human review pending"
+    },
+    {
+      "id": "E003",
+      "type": "prespecified_plan",
+      "locator": "../方案A_背景知识与执行方案.html",
+      "supports": "feature counts, models, splits, tests and interpretation boundaries"
+    },
+    {
+      "id": "E004",
+      "type": "external_dataset_documentation",
+      "url": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+      "doi": "10.24432/C5DW2B",
+      "supports": "dataset origin and feature meaning",
+      "verification": "opened by agent in task; accountable human verification pending"
+    },
+    {
+      "id": "E005",
+      "type": "software_method_documentation",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "supports": "training-only fitted preprocessing"
+    },
+    {
+      "id": "E006",
+      "type": "saved_test_predictions",
+      "locator": "outputs/predictions/test_predictions.csv",
+      "sha256": "e9c5e529035258cd7ba4eed76b934f1d3a891cc43ea3b2f017e504f4768722b5",
+      "supports": "paired LR30/LR5 disagreement and error overlap",
+      "verification": "row and label counts plus confusion matrices checked against summary; human review pending"
+    }
+  ],
+  "numeric_bindings": {
+    "tables/sample.tex": [
+      "source",
+      "split"
+    ],
+    "tables/statistics.tex": [
+      "statistics.features"
+    ],
+    "tables/performance.tex": [
+      "models.*.cv",
+      "models.*.test"
+    ],
+    "tables/classification.tex": [
+      "models.*.test"
+    ],
+    "tables/confusion.tex": [
+      "models.*.test"
+    ],
+    "tables/differences.tex": [
+      "comparisons"
+    ],
+    "tables/features.tex": [
+      "models.LR10.features",
+      "models.LR5.features"
+    ],
+    "main.tex:exploratory_error_comparison": [
+      "outputs/predictions/test_predictions.csv:true_label,LR30_prediction,LR5_prediction"
+    ],
+    "results_macros.tex": [
+      "source",
+      "split",
+      "models",
+      "default_model",
+      "profile.json"
+    ]
+  },
+  "derived_error_comparison": {
+    "models": [
+      "LR30",
+      "LR5"
+    ],
+    "test_n": 114,
+    "errors": {
+      "LR30": 4,
+      "LR5": 4
+    },
+    "common_errors": 0,
+    "disagreements": 8,
+    "disagreement_percent": 7.017543859649122,
+    "identical_fp_fn_counts": true,
+    "interpretation": "exploratory description under the planned error analysis; no model reselection"
+  },
+  "visibility": "public",
+  "contains_private_identity": false,
+  "public_author_name_approved": true,
+  "submission_ready": false,
+  "human_verifier": null,
+  "pending": [
+    "个人主页资料由作者后续提供，公开URL待填写并核验",
+    "作者人工核对报告与引用、确认署名及最终提交"
+  ]
+}

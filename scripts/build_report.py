@@ -133,7 +133,9 @@ def figure_block(key: str, caption: str, label: str, figures: dict, width="0.94"
             r"\caption{" + caption + "}\\label{" + label + "}\n" + r"\end{figure}" + "\n")
 
 
-def build(summary_file: Path):
+def build(summary_file: Path, public: bool = False):
+    global REPORT
+    REPORT = ROOT / ("public_report" if public else "report")
     s = json.loads(summary_file.read_text(encoding="utf-8"))
     for k in ("source", "split", "statistics", "models", "comparisons", "default_model", "figures"):
         if k not in s:
@@ -142,17 +144,26 @@ def build(summary_file: Path):
     for k in MODEL_KEYS:
         if k not in models:
             raise KeyError(f"Required model missing: {k}")
-    if not (REPORT / "main.tex").exists():
-        raise RuntimeError("Create the LaTeX project using create_latex_project before running this script.")
+    REPORT.mkdir(parents=True, exist_ok=True)
     (REPORT / "tables").mkdir(exist_ok=True)
     (REPORT / "figures").mkdir(exist_ok=True)
     profile_path = ROOT / "profile.json"
     profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.exists() else {}
-    private_path = ROOT / "profile.private.json"
-    private = json.loads(private_path.read_text(encoding="utf-8")) if private_path.exists() else {}
-    author = private.get("name") or profile.get("name") or profile.get("author") or profile.get("name_zh") or "署名待确认"
-    student_id = private.get("student_id", "待确认")
-    institution = private.get("institution", "待确认")
+    private = {}
+    if public:
+        # Deliberately do not inspect or read the private profile in public mode.
+        if profile.get("public_report_approved") is not True:
+            raise ValueError("Public report requires explicit approval in profile.json")
+        author = profile.get("public_report_author", "").strip()
+        if not author:
+            raise ValueError("Public report author must be set in profile.json")
+        student_id = institution = ""
+    else:
+        private_path = ROOT / "profile.private.json"
+        private = json.loads(private_path.read_text(encoding="utf-8")) if private_path.exists() else {}
+        author = private.get("name") or profile.get("name") or profile.get("author") or profile.get("name_zh") or "署名待确认"
+        student_id = private.get("student_id", "待确认")
+        institution = private.get("institution", "待确认")
     homepage = profile.get("homepage_url", "")
     project_url = profile.get("project_url", "")
     repository = profile.get("repository_url", "")
@@ -238,7 +249,8 @@ def build(summary_file: Path):
         macros[key+"FN"]=str(q["fn"])
         macros[key+"FP"]=str(q["fp"])
         macros[key+"Sensitivity"]=number(q["sensitivity"])
-    (REPORT/"results_macros.tex").write_text("% Generated from outputs/summary.json and local profile files; contains private course identity; do not publish.\n"+"\n".join("\\newcommand{\\"+k+"}{"+v+"}" for k,v in macros.items())+"\n",encoding="utf-8")
+    identity_note = "approved public author name only" if public else "contains private course identity; do not publish"
+    (REPORT/"results_macros.tex").write_text("% Generated from saved analysis and the applicable profile; " + identity_note + ".\n"+"\n".join("\\newcommand{\\"+k+"}{"+v+"}" for k,v in macros.items())+"\n",encoding="utf-8")
 
     status_text = "本报告已由真实分析结果生成；作者仍需逐项理解并核对数据、方法、数字、图表和引用。"
     if blockers:
@@ -288,6 +300,8 @@ def build(summary_file: Path):
     body = TEX_TEMPLATE
     replacements={
       "@@STATUS@@":tex(status_text),"@@NUMERIC_RESULTS@@":numeric_results,
+      "@@AUTHOR_BLOCK@@":r"\author{\AuthorName}" if public else r"\author{\AuthorName\\[0.3em]\small 学号：\StudentID\quad \Institution}",
+      "@@REPORT_DIR@@":tex(REPORT.name),
       "@@ERROR_RESULTS@@":error_results,
       "@@STAT_RESULTS@@":"；".join(FEATURE_ZH.get(q["feature"],tex(q["feature"]))+"的秩二列相关为 "+number(q["rank_biserial"])+"（95\\% 区间 "+interval(q["rank_biserial_ci_low"],q["rank_biserial_ci_high"])+"）" for q in stats)+"。",
       "@@QUALITY@@":r"\input{tables/quality.tex}" if quality_rows else "完整质量核查记录见分析输出；本报告不以缺失记录替代实际检查。",
@@ -322,12 +336,13 @@ def build(summary_file: Path):
        "tables/confusion.tex":["models.*.test"],"tables/differences.tex":["comparisons"],
        "tables/features.tex":["models.LR10.features","models.LR5.features"],
        "main.tex:exploratory_error_comparison":["outputs/predictions/test_predictions.csv:true_label,LR30_prediction,LR5_prediction"],
-       "results_macros.tex":["source","split","models","default_model","profile.json","profile.private.json"]},
+       "results_macros.tex":["source","split","models","default_model","profile.json"] + ([] if public else ["profile.private.json"])},
       "derived_error_comparison":error_comparison,
-      "contains_private_identity":bool(private),"submission_ready":False,"human_verifier":None,"pending":blockers+["作者人工核对报告与引用、确认署名及最终提交"]
+      "visibility":"public" if public else "local_private",
+      "contains_private_identity":bool(private),"public_author_name_approved":public,"submission_ready":False,"human_verifier":None,"pending":blockers+["作者人工核对报告与引用、确认署名及最终提交"]
     }
     (REPORT/"provenance.json").write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    (REPORT/"build_status.json").write_text(json.dumps({"generated":True,"author":author,"pending":blockers,"compilation":"not tested by generation script","source_summary_sha256":provenance["source_summary_sha256"]},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (REPORT/"build_status.json").write_text(json.dumps({"generated":True,"visibility":provenance["visibility"],"author":author,"pending":blockers,"compilation":"not tested by generation script","source_summary_sha256":provenance["source_summary_sha256"]},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"report":str(REPORT/"main.tex"),"tables":len(list((REPORT/"tables").glob('*.tex'))),"figures":len(list((REPORT/"figures").iterdir())),"pending":blockers},ensure_ascii=False,indent=2))
 
 
@@ -353,6 +368,7 @@ TEX_TEMPLATE = r'''% !TEX program = xelatex
 \providecommand{\songti}{\CJKfamily{song}}
 \usepackage[a4paper,left=24mm,right=24mm,top=23mm,bottom=24mm]{geometry}
 \usepackage{amsmath,amssymb,booktabs,array,longtable,graphicx,float,placeins,pdflscape}
+\usepackage{xurl}
 \usepackage{xcolor,hyperref,fancyhdr,enumitem,caption,microtype}
 \hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,breaklinks=true}
 \usepackage[numbers,sort&compress]{natbib}
@@ -369,7 +385,7 @@ TEX_TEMPLATE = r'''% !TEX program = xelatex
 \graphicspath{{figures/}}
 \input{results_macros.tex}
 \title{\vspace{-1em}\heiti 乳腺肿块良恶性分类中的特征减量\\[0.6em]\large 5、10、30 个细胞核特征下的分类表现与解释}
-\author{\AuthorName\\[0.3em]\small 学号：\StudentID\quad \Institution}
+@@AUTHOR_BLOCK@@
 \date{2026 年 11 月 13 日}
 \begin{document}
 \maketitle
@@ -473,7 +489,7 @@ r_{rb}=\frac{2U_M}{n_M n_B}-1.
 \section{课程实现、可复现性与成果展示}
 本项目用 pandas 完成无表头 CSV 的读取、类型和质量核查；用 NumPy 与 SciPy 组织数组计算、分布检验和重采样；用 scikit-learn 的管道完成训练内预处理、筛选、模型拟合及评价；用 Matplotlib/Seaborn 生成图表。类与方法、函数、字典、循环及文件路径管理贯穿分析。统计分析、模型评价与网页展示分别对应课程的不同评分环节。
 
-报告由 \texttt{scripts/build\_report.py} 读取 \texttt{outputs/summary.json}，生成汇总数字、表格和图引用；逐条预测文件 \texttt{outputs/predictions/test\_predictions.csv} 用于计算两模型的错误重合与预测不一致情况。脚本核对该文件的行数、类别计数及混淆计数，并在 \texttt{report/provenance.json} 中记录两个结果源的 SHA-256，避免手工抄录造成漂移。原始数据校验值、软件版本、随机种子、参数、划分和预测结果保存在项目中。重建报告本身不会训练模型；应先执行分析入口生成真实输出，再重建和编译。现有结果与新环境是否一致，需要实际复跑核验。
+报告由 \texttt{scripts/build\_report.py} 读取 \texttt{outputs/summary.json}，生成汇总数字、表格和图引用；逐条预测文件 \texttt{outputs/predictions/test\_predictions.csv} 用于计算两模型的错误重合与预测不一致情况。脚本核对该文件的行数、类别计数及混淆计数，并在 \texttt{@@REPORT_DIR@@/provenance.json} 中记录两个结果源的 SHA-256，避免手工抄录造成漂移。原始数据校验值、软件版本、随机种子、参数、划分和预测结果保存在项目中。重建报告本身不会训练模型；应先执行分析入口生成真实输出，再重建和编译。现有结果与新环境是否一致，需要实际复跑核验。
 
 \begin{itemize}
 \item 个人主页：\HomepageURL。
@@ -553,5 +569,6 @@ BIBLIOGRAPHY = r'''@misc{uci,
 if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--summary",type=Path,default=ROOT/"outputs"/"summary.json")
+    parser.add_argument("--public",action="store_true",help="Build the approved author-name-only version without reading the private profile")
     args=parser.parse_args()
-    build(args.summary)
+    build(args.summary,public=args.public)

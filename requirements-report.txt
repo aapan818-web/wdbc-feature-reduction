@@ -1,0 +1,2 @@
+# PDF inspection for report source packaging; analysis dependencies are separate.
+pypdf==6.21.2

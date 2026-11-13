@@ -1,0 +1,14 @@
+\begin{center}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lrr}
+\toprule
+测试集 AUC 差值 & 点估计 & 成对 bootstrap 95\% 区间 \tabularnewline
+\midrule
+LR5-LR30 & -0.0003 & [-0.0103, 0.0093] \tabularnewline
+LR10-LR30 & 0.0013 & [-0.0063, 0.0103] \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize 1,000 次按真实类别分层的成对重采样。差值为减量模型减去 LR30；负值表示减量模型的 AUC 较低。}

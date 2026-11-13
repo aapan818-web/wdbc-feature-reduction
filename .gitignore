@@ -16,3 +16,13 @@ profile.private.json
 /outputs/review_montage.png
 /docs/site-*.png
 PROGRESS.md
+# LaTeX 可重建中间件
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+*.xdv
+*.synctex.gz
+/public_report/preview*.png
+/public_report/page-*.png

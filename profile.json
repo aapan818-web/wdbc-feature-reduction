@@ -1,12 +1,13 @@
 {
   "username": "aapan818-web",
-  "display_name": "aapan818-web",
+  "display_name": "潘冠宇",
   "bio": "",
   "github_url": "https://github.com/aapan818-web",
   "repository_url": "https://github.com/aapan818-web/wdbc-feature-reduction",
   "homepage_url": "",
-  "project_url": "",
+  "project_url": "https://aapan818-web.github.io/wdbc-feature-reduction/project/",
   "report_title": "乳腺肿块良恶性分类中的特征减量",
   "homepage_status": "deferred_by_user",
-  "public_report_approved": false
+  "public_report_approved": true,
+  "public_report_author": "潘冠宇"
 }
