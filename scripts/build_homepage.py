@@ -3,6 +3,7 @@
 from pathlib import Path
 import html
 import json
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = 'https://aapan818-web.github.io/wdbc-feature-reduction/'
@@ -15,6 +16,28 @@ def build_homepage(directory=None):
     directory = directory or ROOT / 'homepage'
     content = json.loads((directory / 'content.json').read_text())
     photos, groups = content['photos'], content['groups']
+    asset_versions = {name: hashlib.sha256((directory / 'assets' / name).read_bytes()).hexdigest()[:12]
+                      for name in ('atmosphere.css', 'atmosphere.js')}
+
+    def landscape_scenes():
+        frames = []
+        for index, (ident, label) in enumerate(((307, '湖光'), (332, '雪山'), (291, '日落'))):
+            photo = photos[str(ident)]
+            source = f'assets/gallery/{photo["file"]}'
+            source_attr = f'src="{source}" fetchpriority="high"' if index == 0 else f'data-src="{source}"'
+            frames.append(f'<div class="scene-frame{" is-active" if index == 0 else ""}" data-scene="{index}" data-scene-name="{label}"><img {source_attr} width="{photo["width"]}" height="{photo["height"]}" alt="" decoding="async"></div>')
+        return '<div class="landscape-layers" aria-hidden="true">' + ''.join(frames) + '<div class="landscape-shade"></div></div>'
+
+    def landscape_controls():
+        buttons = ''.join(f'<button type="button" data-scene-select="{i}" aria-pressed="{"true" if i == 0 else "false"}"><small>0{i+1}</small>{label}</button>' for i,label in enumerate(('湖光','雪山','日落')))
+        return f'<div class="wrap scene-bar"><p class="scene-caption"><span>OUT IN THE OPEN</span>旅途中的风景</p><div class="scene-controls" role="group" aria-label="切换首页背景" hidden>{buttons}</div><a class="scene-journal-link" href="places/">去相册看看 ↗</a><span class="scene-status" role="status" aria-live="polite"></span></div>'
+
+    def chapter_atmosphere(slug):
+        chosen = {'sports':240, 'research':279, 'me':255, 'places':307, 'pets':308}
+        if not slug:
+            return ''
+        photo = photos[str(chosen[slug])]
+        return f'<div class="chapter-atmosphere" aria-hidden="true"><img src="../assets/gallery/{photo["file"]}" width="{photo["width"]}" height="{photo["height"]}" alt="" decoding="async"></div>'
 
     def img(ident, prefix='', eager=False, cls=''):
         p = photos[str(ident)]
@@ -26,6 +49,7 @@ def build_homepage(directory=None):
         return f'''<a class="skip" href="#main">跳到内容</a><header class="site-header"><div class="wrap nav-row">
 <a class="brand" href="{pre or './'}" aria-label="潘冠宇，首页"><span class="brand-symbol">潘<span>·</span></span><span class="brand-name">潘冠宇<small>GAVIN PAN</small></span></a>
 <nav class="desktop-nav" aria-label="主导航">{links}<a class="nav-follow" href="#follow">抖音见 ↗</a></nav>
+<button class="motion-toggle" type="button" data-motion-toggle aria-pressed="true" aria-label="暂停页面动画" hidden><span class="motion-icon" aria-hidden="true">Ⅱ</span><span data-motion-label>暂停动效</span></button>
 <details class="mobile-menu"><summary>目录 <span>＋</span></summary><nav aria-label="移动端导航"><a href="{pre or './'}">首页</a>{links}<a href="#follow">抖音见 ↗</a></nav></details></div></header>'''
 
     def follow(slug):
@@ -52,13 +76,13 @@ def build_homepage(directory=None):
     def page(slug,title,description,body,cover):
         pre = '../' if slug else ''
         canonical = BASE_URL + (slug+'/' if slug else '')
-        return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{E(title)}｜Gavin Pan · 潘冠宇</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#f4f1e9"><meta name="color-scheme" content="light"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{E(title)}｜Gavin Pan · 潘冠宇"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{BASE_URL}assets/gallery/{photos[str(cover)]['file']}"><link rel="icon" href="{pre}assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}assets/journal.css"><script src="{pre}assets/journal.js" defer></script></head><body class="page-{slug or 'home'}" id="top">{header(slug)}<main id="main">{body}{next_pages(slug) if slug else ''}{follow(slug)}</main>{footer(slug)}<dialog class="lightbox" aria-label="照片查看器"><div class="lightbox-top"><p data-lightbox-counter></p><button type="button" data-close aria-label="关闭照片">关闭 ×</button></div><div class="lightbox-stage"><button type="button" data-prev aria-label="上一张照片">←</button><img data-lightbox-image alt=""><button type="button" data-next aria-label="下一张照片">→</button></div><div class="lightbox-caption"><p data-lightbox-caption></p><a data-lightbox-original target="_blank" rel="noopener">打开大图 ↗</a></div></dialog></body></html>'''
+        return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{E(title)}｜Gavin Pan · 潘冠宇</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#f4f1e9"><meta name="color-scheme" content="light"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{E(title)}｜Gavin Pan · 潘冠宇"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{BASE_URL}assets/gallery/{photos[str(cover)]['file']}"><link rel="icon" href="{pre}assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}assets/journal.css"><link rel="stylesheet" href="{pre}assets/atmosphere.css?v={asset_versions['atmosphere.css']}"><script src="{pre}assets/journal.js" defer></script><script src="{pre}assets/atmosphere.js?v={asset_versions['atmosphere.js']}" defer></script></head><body class="page-{slug or 'home'}" id="top">{chapter_atmosphere(slug)}{header(slug)}<main id="main">{body}{next_pages(slug) if slug else ''}{follow(slug)}</main>{footer(slug)}<dialog class="lightbox" aria-label="照片查看器"><div class="lightbox-top"><p data-lightbox-counter></p><button type="button" data-close aria-label="关闭照片">关闭 ×</button></div><div class="lightbox-stage"><button type="button" data-prev aria-label="上一张照片">←</button><img data-lightbox-image alt=""><button type="button" data-next aria-label="下一张照片">→</button></div><div class="lightbox-caption"><p data-lightbox-caption></p><a data-lightbox-original target="_blank" rel="noopener">打开大图 ↗</a></div></dialog></body></html>'''
 
     def intro(slug,eyebrow,title,description):
         return f'''<div class="wrap breadcrumb"><a href="../">首页</a><span>/</span><span>{dict((s,n) for s,n,i in SECTIONS)[slug]}</span><button class="share-button" type="button" data-share hidden>分享这一页 ↗</button><span class="share-status" role="status" aria-live="polite"></span></div><section class="wrap chapter-intro"><div><p class="eyebrow">{eyebrow}</p><h1>{title}</h1></div><p class="chapter-description">{description}</p></section>'''
 
     # The home contains only selected covers. All photo sequences live on the detail pages.
-    home = f'''<section class="wrap home-hero"><div class="hero-copy"><p class="eyebrow"><span class="red-dot"></span> HI, I'M GAVIN PAN.</p><h1>认真打球，<br>也认真<span class="serif">去玩。</span></h1><div class="hero-athletics"><p class="champion-quote" lang="en">Don't ever underestimate the heart of a champion.</p><p class="hero-teams">🏀北大二队，🏈北大DRAGONS</p><p class="hero-hobbies">＋健身 · 攀岩 · 滑雪 · 游泳 · 羽毛球</p></div><p class="hero-bio" lang="en">I'm Gavin Pan, a first-year master's student in Global Health at Peking University.</p><div class="hero-tags"><span>篮球</span><span>ENTP</span><span>全球卫生</span></div><a class="button red" href="sports/">从球场认识我 <span>↗</span></a><p class="hero-aside">爱好多一点，生活就多几种打开方式。</p></div><figure class="hero-portrait">{img(205,eager=True)}<span class="portrait-stamp">ON &amp;<br>OFF<br>COURT.</span><figcaption><span>GAVIN PAN / 潘冠宇</span><span>生活，不止一面。</span></figcaption></figure></section>
+    home = f'''<div class="home-landscape" data-scenic-stage>{landscape_scenes()}<section class="wrap home-hero"><div class="hero-copy"><p class="eyebrow"><span class="red-dot"></span> HI, I'M GAVIN PAN.</p><h1>认真打球，<br>也认真<span class="serif">去玩。</span></h1><div class="hero-athletics"><p class="champion-quote" lang="en">Don't ever underestimate the heart of a champion.</p><p class="hero-teams">🏀北大二队，🏈北大DRAGONS</p><p class="hero-hobbies">＋健身 · 攀岩 · 滑雪 · 游泳 · 羽毛球</p></div><p class="hero-bio" lang="en">I'm Gavin Pan, a first-year master's student in Global Health at Peking University.</p><div class="hero-tags"><span>篮球</span><span>ENTP</span><span>全球卫生</span></div><a class="button red" href="sports/">从球场认识我 <span>↗</span></a><p class="hero-aside">爱好多一点，生活就多几种打开方式。</p></div><figure class="hero-portrait">{img(205,eager=True)}<span class="portrait-stamp">ON &amp;<br>OFF<br>COURT.</span><figcaption><span>GAVIN PAN / 潘冠宇</span><span>生活，不止一面。</span></figcaption></figure></section>{landscape_controls()}</div>
 <section class="wrap directory" id="explore"><div class="section-heading"><div><p class="eyebrow">PICK A SIDE</p><h2>你想先认识哪一面？</h2></div><p>五个入口，随意逛逛。</p></div><div class="directory-grid">
 <a class="portal portal-sports" href="sports/"><div class="portal-photo">{img(208)}</div><div class="portal-copy"><span class="portal-index">01 / SPORTS</span><h3>球场见。</h3><p>篮球、腰旗橄榄球，与每一次上场。</p><span class="portal-arrow">↗</span></div></a>
 <a class="portal portal-research" href="research/"><span class="portal-index">02 / RESEARCH</span><div class="research-glyph" aria-hidden="true">30 <i>→</i> 5</div><h3>认真研究。</h3><p>全球卫生 · 现场调查 · 数据实践</p><span class="portal-arrow">↗</span></a>
