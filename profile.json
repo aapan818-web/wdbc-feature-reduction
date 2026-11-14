@@ -22,6 +22,13 @@
       "direct_profile_url": null
     },
     "content_source": "User-provided resume and interview; current details confirmed by author on 2026-11-14",
-    "copy_status": "original_based_on_author_confirmed_details"
+    "copy_status": "original_based_on_author_confirmed_details",
+    "sections": [
+      "sports",
+      "research",
+      "me",
+      "places",
+      "pets"
+    ]
   }
 }

@@ -140,9 +140,18 @@ def build_home(s, p, report):
         template = (ROOT / home['template']).resolve()
         if not template.is_relative_to(ROOT.resolve()) or not template.is_file():
             raise ValueError('个人主页模板必须是项目目录内的实际文件')
+        if home.get('sections'):
+            from build_homepage import build_homepage
+            built = build_homepage(template.parent)
+            for section in home['sections']:
+                if section not in built or section not in {'sports', 'research', 'me', 'places', 'pets'}:
+                    raise ValueError('未识别的个人主页栏目')
+                destination = DOCS / section / 'index.html'
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(template.parent / section / 'index.html', destination)
         (DOCS / 'index.html').write_text(template.read_text())
         for asset in (template.parent / 'assets').iterdir():
-            if asset.is_file() and asset.suffix in {'.css', '.js'}:
+            if asset.is_file() and asset.suffix in {'.css', '.js', '.svg'}:
                 shutil.copyfile(asset, DOCS / 'assets' / asset.name)
         return
     photos = home.get('photos', [])

@@ -1,0 +1,856 @@
+{
+  "photos": {
+    "208": {
+      "file": "p208.webp",
+      "width": 1600,
+      "height": 1066,
+      "caption": "夜间赛场",
+      "group": "basketball"
+    },
+    "209": {
+      "file": "p209.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "篮下的一次出手",
+      "group": "basketball"
+    },
+    "210": {
+      "file": "p210.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "持球进攻",
+      "group": "basketball"
+    },
+    "212": {
+      "file": "p212.webp",
+      "width": 1600,
+      "height": 1094,
+      "caption": "2026 北大 3v3 超级联赛",
+      "group": "basketball"
+    },
+    "219": {
+      "file": "p219.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "球队合影",
+      "group": "basketball"
+    },
+    "232": {
+      "file": "p232.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "并肩上场",
+      "group": "basketball"
+    },
+    "237": {
+      "file": "p237.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "赛场合影",
+      "group": "basketball"
+    },
+    "271": {
+      "file": "p271.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "球场上的我们",
+      "group": "basketball"
+    },
+    "272": {
+      "file": "p272.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "医学队合影",
+      "group": "basketball"
+    },
+    "273": {
+      "file": "p273.webp",
+      "width": 1080,
+      "height": 720,
+      "caption": "比赛中的攻防",
+      "group": "basketball"
+    },
+    "276": {
+      "file": "p276.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "球场上的相聚",
+      "group": "basketball"
+    },
+    "295": {
+      "file": "p295.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "篮球活动合影",
+      "group": "basketball"
+    },
+    "296": {
+      "file": "p296.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "带球突破",
+      "group": "basketball"
+    },
+    "297": {
+      "file": "p297.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "篮下进攻",
+      "group": "basketball"
+    },
+    "222": {
+      "file": "p222.webp",
+      "width": 1447,
+      "height": 1600,
+      "caption": "25 号背影",
+      "group": "flag"
+    },
+    "224": {
+      "file": "p224.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "腰旗橄榄球",
+      "group": "flag"
+    },
+    "228": {
+      "file": "p228.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "向前推进",
+      "group": "flag"
+    },
+    "229": {
+      "file": "p229.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "争抢传球",
+      "group": "flag"
+    },
+    "230": {
+      "file": "p230.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "夜场",
+      "group": "flag"
+    },
+    "234": {
+      "file": "p234.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "和队友一起",
+      "group": "flag"
+    },
+    "239": {
+      "file": "p239.webp",
+      "width": 900,
+      "height": 1600,
+      "caption": "健身房里",
+      "group": "training"
+    },
+    "240": {
+      "file": "p240.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "傍晚的球场",
+      "group": "training"
+    },
+    "298": {
+      "file": "p298.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "雪场合影",
+      "group": "training"
+    },
+    "249": {
+      "file": "p249.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "风中的色彩",
+      "group": "mountains"
+    },
+    "250": {
+      "file": "p250.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "山路与经幡",
+      "group": "mountains"
+    },
+    "264": {
+      "file": "p264.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "山的纹理",
+      "group": "mountains"
+    },
+    "265": {
+      "file": "p265.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "山间草地",
+      "group": "mountains"
+    },
+    "301": {
+      "file": "p301.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "天山天池",
+      "group": "mountains"
+    },
+    "302": {
+      "file": "p302.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "额尔齐斯河",
+      "group": "mountains"
+    },
+    "303": {
+      "file": "p303.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "沿山路向上",
+      "group": "mountains"
+    },
+    "305": {
+      "file": "p305.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "风力发电机与远山",
+      "group": "mountains"
+    },
+    "306": {
+      "file": "p306.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "河谷的傍晚",
+      "group": "mountains"
+    },
+    "307": {
+      "file": "p307.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "云落在山间",
+      "group": "mountains"
+    },
+    "308": {
+      "file": "p308.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "水中的山",
+      "group": "mountains"
+    },
+    "329": {
+      "file": "p329.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "高处的建筑",
+      "group": "mountains"
+    },
+    "330": {
+      "file": "p330.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "抬头的颜色",
+      "group": "mountains"
+    },
+    "332": {
+      "file": "p332.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "雪山与云",
+      "group": "mountains"
+    },
+    "333": {
+      "file": "p333.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "山峰上的光",
+      "group": "mountains"
+    },
+    "334": {
+      "file": "p334.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "飞鸟掠过屋檐",
+      "group": "mountains"
+    },
+    "251": {
+      "file": "p251.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "湖岸",
+      "group": "water"
+    },
+    "253": {
+      "file": "p253.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "云隙里的光",
+      "group": "water"
+    },
+    "255": {
+      "file": "p255.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "海边日落",
+      "group": "water"
+    },
+    "257": {
+      "file": "p257.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "花与落日",
+      "group": "water"
+    },
+    "258": {
+      "file": "p258.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "天色渐暗",
+      "group": "water"
+    },
+    "260": {
+      "file": "p260.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "浅色湖面",
+      "group": "water"
+    },
+    "291": {
+      "file": "p291.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "海边的晚霞",
+      "group": "water"
+    },
+    "292": {
+      "file": "p292.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "椰树与海",
+      "group": "water"
+    },
+    "293": {
+      "file": "p293.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "蓝调时刻",
+      "group": "water"
+    },
+    "304": {
+      "file": "p304.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "湖边的两个人",
+      "group": "water"
+    },
+    "319": {
+      "file": "p319.webp",
+      "width": 900,
+      "height": 1600,
+      "caption": "从高处看海",
+      "group": "water"
+    },
+    "325": {
+      "file": "p325.webp",
+      "width": 1600,
+      "height": 1102,
+      "caption": "水边的树",
+      "group": "water"
+    },
+    "327": {
+      "file": "p327.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "湖面与倒影",
+      "group": "water"
+    },
+    "341": {
+      "file": "p341.webp",
+      "width": 900,
+      "height": 1600,
+      "caption": "透明的海",
+      "group": "water"
+    },
+    "261": {
+      "file": "p261.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "石壁与檐角",
+      "group": "cities"
+    },
+    "262": {
+      "file": "p262.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "升起的热气球",
+      "group": "cities"
+    },
+    "263": {
+      "file": "p263.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "室内的色彩",
+      "group": "cities"
+    },
+    "300": {
+      "file": "p300.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "路上的傍晚",
+      "group": "cities"
+    },
+    "310": {
+      "file": "p310.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "俯瞰城市",
+      "group": "cities"
+    },
+    "311": {
+      "file": "p311.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "街角的飞鸟",
+      "group": "cities"
+    },
+    "312": {
+      "file": "p312.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "白色穹顶",
+      "group": "cities"
+    },
+    "313": {
+      "file": "p313.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "街角招牌",
+      "group": "cities"
+    },
+    "314": {
+      "file": "p314.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "一屋子的灯",
+      "group": "cities"
+    },
+    "315": {
+      "file": "p315.webp",
+      "width": 900,
+      "height": 1600,
+      "caption": "城市天际线",
+      "group": "cities"
+    },
+    "316": {
+      "file": "p316.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "夜间道路",
+      "group": "cities"
+    },
+    "318": {
+      "file": "p318.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "水边夜色",
+      "group": "cities"
+    },
+    "321": {
+      "file": "p321.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "入夜的建筑",
+      "group": "cities"
+    },
+    "336": {
+      "file": "p336.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "街巷之间",
+      "group": "cities"
+    },
+    "338": {
+      "file": "p338.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "彩色街道",
+      "group": "cities"
+    },
+    "339": {
+      "file": "p339.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "工地上空的晚霞",
+      "group": "cities"
+    },
+    "340": {
+      "file": "p340.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "城市与暮色",
+      "group": "cities"
+    },
+    "342": {
+      "file": "p342.webp",
+      "width": 900,
+      "height": 1600,
+      "caption": "涂鸦街巷",
+      "group": "cities"
+    },
+    "343": {
+      "file": "p343.webp",
+      "width": 900,
+      "height": 1600,
+      "caption": "鱼尾狮与城市",
+      "group": "cities"
+    },
+    "245": {
+      "file": "p245.webp",
+      "width": 1080,
+      "height": 1080,
+      "caption": "树影与晚霞",
+      "group": "campus"
+    },
+    "266": {
+      "file": "p266.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "大学堂",
+      "group": "campus"
+    },
+    "268": {
+      "file": "p268.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "雪后的湖边",
+      "group": "campus"
+    },
+    "269": {
+      "file": "p269.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "雪夜的小路",
+      "group": "campus"
+    },
+    "274": {
+      "file": "p274.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "未名湖畔",
+      "group": "campus"
+    },
+    "279": {
+      "file": "p279.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "夜色中的湖与塔",
+      "group": "campus"
+    },
+    "205": {
+      "file": "p205.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "潘冠宇",
+      "group": "me"
+    },
+    "217": {
+      "file": "p217.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "红墙前",
+      "group": "me"
+    },
+    "238": {
+      "file": "p238.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "毕业那天",
+      "group": "me"
+    },
+    "244": {
+      "file": "p244.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "海边",
+      "group": "me"
+    },
+    "246": {
+      "file": "p246.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "小时候",
+      "group": "me"
+    },
+    "277": {
+      "file": "p277.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "童年的旅行",
+      "group": "me"
+    },
+    "278": {
+      "file": "p278.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "小时候的合影姿势",
+      "group": "me"
+    },
+    "317": {
+      "file": "p317.webp",
+      "width": 1066,
+      "height": 1600,
+      "caption": "城市高处",
+      "group": "me"
+    },
+    "323": {
+      "file": "p323.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "旅途中的一张",
+      "group": "me"
+    },
+    "326": {
+      "file": "p326.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "湖边留影",
+      "group": "me"
+    },
+    "331": {
+      "file": "p331.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "山前",
+      "group": "me"
+    },
+    "337": {
+      "file": "p337.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "水边",
+      "group": "me"
+    },
+    "213": {
+      "file": "p213.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "合影",
+      "group": "me"
+    },
+    "215": {
+      "file": "p215.webp",
+      "width": 1201,
+      "height": 1600,
+      "caption": "毕业合影",
+      "group": "me"
+    },
+    "294": {
+      "file": "p294.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "出游合影",
+      "group": "me"
+    },
+    "309": {
+      "file": "p309.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "夜里的合影",
+      "group": "me"
+    },
+    "335": {
+      "file": "p335.webp",
+      "width": 1201,
+      "height": 1600,
+      "caption": "毕业留念",
+      "group": "me"
+    },
+    "247": {
+      "file": "p247.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "沙发上的柠檬",
+      "group": "cats"
+    },
+    "248": {
+      "file": "p248.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "柠檬出门",
+      "group": "cats"
+    },
+    "270": {
+      "file": "p270.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "柠檬抬头",
+      "group": "cats"
+    },
+    "275": {
+      "file": "p275.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "桌子下面的柠檬",
+      "group": "cats"
+    },
+    "324": {
+      "file": "p324.webp",
+      "width": 1067,
+      "height": 1600,
+      "caption": "遇见一只兔子",
+      "group": "animals"
+    },
+    "328": {
+      "file": "p328.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "路边的狗狗",
+      "group": "animals"
+    },
+    "320": {
+      "file": "p320.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "水下的鱼群",
+      "group": "animals"
+    }
+  },
+  "groups": {
+    "basketball": [
+      "208",
+      "209",
+      "210",
+      "212",
+      "219",
+      "232",
+      "237",
+      "271",
+      "272",
+      "273",
+      "276",
+      "295",
+      "296",
+      "297"
+    ],
+    "flag": [
+      "222",
+      "224",
+      "228",
+      "229",
+      "230",
+      "234"
+    ],
+    "training": [
+      "239",
+      "240",
+      "298"
+    ],
+    "mountains": [
+      "249",
+      "250",
+      "264",
+      "265",
+      "301",
+      "302",
+      "303",
+      "305",
+      "306",
+      "307",
+      "308",
+      "329",
+      "330",
+      "332",
+      "333",
+      "334"
+    ],
+    "water": [
+      "251",
+      "253",
+      "255",
+      "257",
+      "258",
+      "260",
+      "291",
+      "292",
+      "293",
+      "304",
+      "319",
+      "325",
+      "327",
+      "341"
+    ],
+    "cities": [
+      "261",
+      "262",
+      "263",
+      "300",
+      "310",
+      "311",
+      "312",
+      "313",
+      "314",
+      "315",
+      "316",
+      "318",
+      "321",
+      "336",
+      "338",
+      "339",
+      "340",
+      "342",
+      "343"
+    ],
+    "campus": [
+      "245",
+      "266",
+      "268",
+      "269",
+      "274",
+      "279"
+    ],
+    "me": [
+      "205",
+      "217",
+      "238",
+      "244",
+      "246",
+      "277",
+      "278",
+      "317",
+      "323",
+      "326",
+      "331",
+      "337",
+      "213",
+      "215",
+      "294",
+      "309",
+      "335"
+    ],
+    "cats": [
+      "247",
+      "248",
+      "270",
+      "275"
+    ],
+    "animals": [
+      "324",
+      "328",
+      "320"
+    ]
+  },
+  "pet_name": "柠檬",
+  "places": [
+    "青甘大环线",
+    "新疆北疆",
+    "天池",
+    "喀纳斯",
+    "大理",
+    "香格里拉",
+    "迪拜",
+    "新加坡",
+    "仙本那",
+    "澳门",
+    "香港"
+  ]
+}
