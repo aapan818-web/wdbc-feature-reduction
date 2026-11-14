@@ -1,5 +1,9 @@
 /* Scenic layers and optional motion for the personal pages. */
 body{position:relative;isolation:isolate}
+.welcome-strip{background:#e6ebe2;border-bottom:1px solid #cbd4c5;text-align:center;color:#344b3b;padding:10px 0 9px}
+.welcome-strip p{font-size:13px;line-height:1.8;letter-spacing:.025em;text-wrap:balance}
+.welcome-strip p[lang="en"]{font:italic 12px/1.75 Georgia,"Times New Roman",serif;letter-spacing:.01em;color:#506151}
+@media(max-width:540px){.welcome-strip{padding:9px 0}.welcome-strip p{font-size:11.5px;letter-spacing:0}.welcome-strip p[lang="en"]{font-size:10.5px;line-height:1.6;margin-top:2px}}
 .site-header{background:rgba(244,241,233,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .desktop-nav{margin-left:auto}.nav-row{gap:22px}
 .motion-toggle{display:flex;align-items:center;gap:7px;flex-shrink:0;min-height:36px;padding:7px 0 7px 18px;border-left:1px solid var(--line);font-size:10px;color:var(--muted);white-space:nowrap}

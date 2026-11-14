@@ -46,7 +46,7 @@ def build_homepage(directory=None):
     def header(slug):
         pre = '../' if slug else ''
         links = ''.join(f'<a href="{pre}{s}/"{ " aria-current=page" if s == slug else ""}>{name}</a>' for s,name,n in SECTIONS)
-        return f'''<a class="skip" href="#main">跳到内容</a><header class="site-header"><div class="wrap nav-row">
+        return f'''<a class="skip" href="#main">跳到内容</a><div class="welcome-strip"><div class="wrap"><p>欢迎来到潘潘潘冠冠的小世界，祝你天天开心。</p><p lang="en">Welcome to Gavin’s little world. Wishing you happiness every day.</p></div></div><header class="site-header"><div class="wrap nav-row">
 <a class="brand" href="{pre or './'}" aria-label="潘冠宇，首页"><span class="brand-symbol">潘<span>·</span></span><span class="brand-name">潘冠宇<small>GAVIN PAN</small></span></a>
 <nav class="desktop-nav" aria-label="主导航">{links}<a class="nav-follow" href="#follow">抖音见 ↗</a></nav>
 <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="true" aria-label="暂停页面动画" hidden><span class="motion-icon" aria-hidden="true">Ⅱ</span><span data-motion-label>暂停动效</span></button>
@@ -55,11 +55,11 @@ def build_homepage(directory=None):
     def follow(slug):
         pre = '../' if slug else ''
         card = f'{pre}assets/social/douyin-gavin-pan.jpg'
-        return f'''<section class="follow-section" id="follow"><div class="wrap follow-grid follow-with-card"><div><p class="eyebrow">KEEP IN TOUCH / GAVIN PAN</p><h2>抖音里，<br>叫我<span>潘潘潘冠冠。</span></h2><p class="follow-instruction">保存图片，在抖音扫一扫中从相册打开。</p><div class="follow-card-actions"><a class="button outline" href="{card}" download="gavin-pan-douyin.jpg">保存图片 <span>↓</span></a><a class="text-link" href="{card}" target="_blank" rel="noopener">查看原图 ↗</a></div></div><figure class="douyin-card"><a href="{card}" target="_blank" rel="noopener" aria-label="查看 Gavin Pan 的抖音名片原图"><img src="{card}" alt="Gavin Pan 的抖音名片，昵称潘潘潘冠冠" width="1125" height="1680" loading="lazy" decoding="async"></a></figure></div></section>'''
+        return f'''<section class="follow-section" id="follow"><div class="wrap follow-grid follow-with-card"><div><p class="eyebrow">KEEP IN TOUCH / GAVIN PAN</p><h2><span>潘潘潘冠冠</span></h2><p class="follow-instruction">保存图片，在抖音扫一扫中从相册打开。</p><div class="follow-card-actions"><a class="button outline" href="{card}" download="gavin-pan-douyin.jpg">保存图片 <span>↓</span></a><a class="text-link" href="{card}" target="_blank" rel="noopener">查看原图 ↗</a></div></div><figure class="douyin-card"><a href="{card}" target="_blank" rel="noopener" aria-label="查看 Gavin Pan 的抖音名片原图"><img src="{card}" alt="Gavin Pan 的抖音名片，昵称潘潘潘冠冠" width="1125" height="1680" loading="lazy" decoding="async"></a></figure></div></section>'''
 
     def footer(slug):
         pre = '../' if slug else ''
-        return f'<footer class="wrap footer"><a href="{pre or "./"}">Gavin Pan © 2026</a><span>认真打球，也认真去玩。</span><a href="#top">回到顶部 ↑</a></footer>'
+        return f'<footer class="wrap footer"><a href="{pre or "./"}">Gavin Pan © 2026</a><span>保持热爱，认真向前。</span><a href="#top">回到顶部 ↑</a></footer>'
 
     def next_pages(slug):
         return '<aside class="wrap next-pages"><p class="eyebrow">ANOTHER SIDE</p><h2>再看看我的另一面。</h2><div>'+''.join(f'<a href="../{s}/"><small>{n}</small>{name}<span>↗</span></a>' for s,name,n in SECTIONS if s!=slug)+'</div></aside>'
@@ -82,7 +82,7 @@ def build_homepage(directory=None):
         return f'''<div class="wrap breadcrumb"><a href="../">首页</a><span>/</span><span>{dict((s,n) for s,n,i in SECTIONS)[slug]}</span><button class="share-button" type="button" data-share hidden>分享这一页 ↗</button><span class="share-status" role="status" aria-live="polite"></span></div><section class="wrap chapter-intro"><div><p class="eyebrow">{eyebrow}</p><h1>{title}</h1></div><p class="chapter-description">{description}</p></section>'''
 
     # The home contains only selected covers. All photo sequences live on the detail pages.
-    home = f'''<div class="home-landscape" data-scenic-stage>{landscape_scenes()}<section class="wrap home-hero"><div class="hero-copy"><p class="eyebrow"><span class="red-dot"></span> HI, I'M GAVIN PAN.</p><h1>认真打球，<br>也认真<span class="serif">去玩。</span></h1><div class="hero-athletics"><p class="champion-quote" lang="en">Don't ever underestimate the heart of a champion.</p><p class="hero-teams">🏀北大二队，🏈北大DRAGONS</p><p class="hero-hobbies">＋健身 · 攀岩 · 滑雪 · 游泳 · 羽毛球</p></div><p class="hero-bio" lang="en">I'm Gavin Pan, a first-year master's student in Global Health at Peking University.</p><div class="hero-tags"><span>篮球</span><span>ENTP</span><span>全球卫生</span></div><a class="button red" href="sports/">从球场认识我 <span>↗</span></a><p class="hero-aside">爱好多一点，生活就多几种打开方式。</p></div><figure class="hero-portrait">{img(205,eager=True)}<span class="portrait-stamp">ON &amp;<br>OFF<br>COURT.</span><figcaption><span>GAVIN PAN / 潘冠宇</span><span>生活，不止一面。</span></figcaption></figure></section>{landscape_controls()}</div>
+    home = f'''<div class="home-landscape" data-scenic-stage>{landscape_scenes()}<section class="wrap home-hero"><div class="hero-copy"><p class="eyebrow"><span class="red-dot"></span> HI, I'M GAVIN PAN.</p><h1>保持热爱，<br>认真<span class="serif">向前。</span></h1><div class="hero-athletics"><p class="champion-quote" lang="en">Don't ever underestimate the heart of a champion.</p><p class="hero-teams">🏀北大二队，🏈北大DRAGONS</p><p class="hero-hobbies">＋健身 · 攀岩 · 滑雪 · 游泳 · 羽毛球</p></div><p class="hero-bio" lang="en">I'm Gavin Pan, a first-year master's student in Global Health at Peking University.</p><div class="hero-tags"><span>篮球</span><span>ENTP</span><span>全球卫生</span></div><a class="button red" href="sports/">从球场认识我 <span>↗</span></a><p class="hero-aside">爱好多一点，生活就多几种打开方式。</p></div><figure class="hero-portrait">{img(205,eager=True)}<span class="portrait-stamp">ON &amp;<br>OFF<br>COURT.</span><figcaption><span>GAVIN PAN / 潘冠宇</span><span>生活，不止一面。</span></figcaption></figure></section>{landscape_controls()}</div>
 <section class="wrap directory" id="explore"><div class="section-heading"><div><p class="eyebrow">PICK A SIDE</p><h2>你想先认识哪一面？</h2></div><p>五个入口，随意逛逛。</p></div><div class="directory-grid">
 <a class="portal portal-sports" href="sports/"><div class="portal-photo">{img(208)}</div><div class="portal-copy"><span class="portal-index">01 / SPORTS</span><h3>球场见。</h3><p>篮球、腰旗橄榄球，与每一次上场。</p><span class="portal-arrow">↗</span></div></a>
 <a class="portal portal-research" href="research/"><span class="portal-index">02 / RESEARCH</span><div class="research-glyph" aria-hidden="true">30 <i>→</i> 5</div><h3>认真研究。</h3><p>全球卫生 · 现场调查 · 数据实践</p><span class="portal-arrow">↗</span></a>
@@ -113,7 +113,7 @@ def build_homepage(directory=None):
     pets += f'''<section class="wrap pet-intro"><figure class="pet-cover">{img(270,'../',True)}</figure><div><p class="eyebrow">MEET LEMON</p><h2>柠檬<span class="pet-dot">。</span></h2><p class="pet-subtitle">名字很酸，长得很甜。</p><p>沙发上、桌子下，或者抬头看人的时候。<br>日常里的几张柠檬。</p><a class="text-link" href="#gallery">看看它的照片 ↓</a></div></section>'''
     pets += gallery(['cats','animals'],heading='柠檬，和路上的小动物。')
 
-    pages = {'':('认真打球，也认真去玩','Gavin Pan（潘冠宇）的个人主页。篮球、全球卫生、旅行、生活与猫咪柠檬。',home,205),'sports':('运动','潘冠宇的运动记录、篮球与腰旗橄榄球比赛成绩和照片。',sports,208),'research':('科研与学习','潘冠宇的全球卫生学习、科研参与经历与公开数据项目。',research,238),'me':('性格与日常','潘冠宇，ENTP。爱好、童年照片与生活片刻。',me,217),'places':('旅行与风景','青甘大环线、北疆、大理、香格里拉和更多旅途中的照片。',places,332),'pets':('柠檬与小动物','潘冠宇的猫咪柠檬，以及旅行中遇见的小动物。',pets,270)}
+    pages = {'':('保持热爱，认真向前','Gavin Pan（潘冠宇）的个人主页。篮球、全球卫生、旅行、生活与猫咪柠檬。',home,205),'sports':('运动','潘冠宇的运动记录、篮球与腰旗橄榄球比赛成绩和照片。',sports,208),'research':('科研与学习','潘冠宇的全球卫生学习、科研参与经历与公开数据项目。',research,238),'me':('性格与日常','潘冠宇，ENTP。爱好、童年照片与生活片刻。',me,217),'places':('旅行与风景','青甘大环线、北疆、大理、香格里拉和更多旅途中的照片。',places,332),'pets':('柠檬与小动物','潘冠宇的猫咪柠檬，以及旅行中遇见的小动物。',pets,270)}
     for slug,(title,description,body,cover) in pages.items():
         dest = directory / slug / 'index.html'
         dest.parent.mkdir(parents=True,exist_ok=True)
