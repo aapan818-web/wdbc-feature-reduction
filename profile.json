@@ -1,7 +1,7 @@
 {
   "username": "aapan818-web",
   "display_name": "潘冠宇",
-  "bio": "我是潘冠宇。北大普通生代表队队员、医学队长，全球卫生方向专硕研一。认真打球，也认真去玩。",
+  "bio": "I'm Gavin Pan, a first-year master's student in Global Health at Peking University. Basketball for PKU's second team; flag football for PKU DRAGONS.",
   "github_url": "https://github.com/aapan818-web",
   "repository_url": "https://github.com/aapan818-web/wdbc-feature-reduction",
   "homepage_url": "https://aapan818-web.github.io/wdbc-feature-reduction/",
@@ -18,8 +18,8 @@
     "public_social": {
       "platform": "抖音",
       "nickname": "潘潘潘冠冠",
-      "handle": "83008883411",
-      "direct_profile_url": null
+      "direct_profile_url": null,
+      "card_image": "assets/social/douyin-gavin-pan.jpg"
     },
     "content_source": "User-provided resume and interview; current details confirmed by author on 2026-11-14",
     "copy_status": "original_based_on_author_confirmed_details",
@@ -30,5 +30,6 @@
       "places",
       "pets"
     ]
-  }
+  },
+  "english_name": "Gavin Pan"
 }

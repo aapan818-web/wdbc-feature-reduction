@@ -64,20 +64,6 @@
       touchX = null;
     }, {passive:true});
   }
-  document.querySelectorAll('[data-copy]').forEach(button => {
-    button.hidden = false;
-    button.addEventListener('click', async () => {
-      const status = document.querySelector('[data-copy-status]');
-      try {
-        await navigator.clipboard.writeText(button.dataset.copy);
-        status.textContent = '已复制，去抖音粘贴搜索。';
-      } catch {
-        const input = document.querySelector('#douyin-handle');
-        input.focus(); input.select(); input.setSelectionRange(0, input.value.length);
-        status.textContent = '号码已选中，可以长按或按快捷键复制。';
-      }
-    });
-  });
   document.querySelectorAll('[data-share]').forEach(button => {
     button.hidden = false;
     button.addEventListener('click', async () => {
