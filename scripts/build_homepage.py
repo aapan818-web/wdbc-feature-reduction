@@ -62,7 +62,7 @@ def build_homepage(directory=None):
 <a class="portal portal-research" href="research/"><span class="portal-index">02 / RESEARCH</span><div class="research-glyph" aria-hidden="true">30 <i>→</i> 5</div><h3>认真研究。</h3><p>全球卫生 · 现场调查 · 数据实践</p><span class="portal-arrow">↗</span></a>
 <a class="portal portal-photo-card" href="places/"><div class="portal-photo">{img(332)}</div><div class="portal-copy"><span class="portal-index">04 / PLACES</span><h3>出门看看。</h3><p>山野、水边，和城市里的光。</p><span class="portal-arrow">↗</span></div></a>
 <a class="portal portal-me" href="me/"><span class="portal-index">03 / A LITTLE ABOUT ME</span><strong class="personality-type">ENTP<span>↗</span></strong><h3>还有这一面。</h3><p>一些爱好，几张旧照，和日常。</p><span class="portal-arrow">↗</span></a>
-<a class="portal portal-photo-card portal-cat" href="pets/"><div class="portal-photo">{img(270)}</div><div class="portal-copy"><span class="portal-index">05 / PETS</span><h3>主角是柠檬。</h3><p>猫咪，和路遇的小动物。</p><span class="portal-arrow">↗</span></div></a></div></section>'''
+<a class="portal portal-photo-card portal-cat" href="pets/"><div class="portal-photo">{img(270)}</div><div class="portal-copy"><span class="portal-index">05 / PETS</span><h3>柠檬登场。</h3><p>猫咪，和路遇的小动物。</p><span class="portal-arrow">↗</span></div></a></div></section>'''
 
     sports = intro('sports','01 / SPORTS','上场，<br><em>就认真打。</em>','北大普通生代表队队员 · 医学队长<br>篮球之外，代表北大 Dragons 参加腰旗橄榄球比赛。')
     sports += f'<figure class="wrap chapter-cover sports-cover">{img(208,"../",True)}<figcaption><span>ON THE COURT</span><span>球场上的时间。</span></figcaption></figure>'
