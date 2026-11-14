@@ -136,6 +136,15 @@ def home_image(photo, eager=False):
 
 def build_home(s, p, report):
     home = p.get('home', {})
+    if home.get('template'):
+        template = (ROOT / home['template']).resolve()
+        if not template.is_relative_to(ROOT.resolve()) or not template.is_file():
+            raise ValueError('个人主页模板必须是项目目录内的实际文件')
+        (DOCS / 'index.html').write_text(template.read_text())
+        for asset in (template.parent / 'assets').iterdir():
+            if asset.is_file() and asset.suffix in {'.css', '.js'}:
+                shutil.copyfile(asset, DOCS / 'assets' / asset.name)
+        return
     photos = home.get('photos', [])
     if len(photos) < 2:
         raise ValueError('个人主页需要已选定的肖像与照片素材')
